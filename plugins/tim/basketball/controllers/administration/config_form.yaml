@@ -1,0 +1,11 @@
+name: Administration
+modelClass: Tim\Basketball\Models\Administration
+form: $/tim/basketball/models/administration/fields.yaml
+defaultRedirect: tim/basketball/administration
+create:
+    redirect: 'tim/basketball/administration/update/:id'
+    redirectClose: tim/basketball/administration
+update:
+    redirect: tim/basketball/administration
+    redirectClose: tim/basketball/administration
+preview: {  }

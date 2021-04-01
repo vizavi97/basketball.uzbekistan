@@ -1,0 +1,32 @@
+plugin:
+    name: 'tim.basketball::lang.plugin.name'
+    description: 'tim.basketball::lang.plugin.description'
+    author: Tim
+    icon: oc-icon-soccer-ball-o
+    homepage: ''
+navigation:
+    BasketBall:
+        label: 'tim.basketball::lang.plugin.name'
+        url: tim/basketball/teams
+        icon: icon-soccer-ball-o
+        sideMenu:
+            Teams:
+                label: Teams
+                url: tim/basketball/teams
+                icon: icon-users
+            Docs:
+                label: 'tim.basketball::lang.docs.documents'
+                url: tim/basketball/docs
+                icon: icon-paperclip
+            administration:
+                label: 'tim.basketball::lang.administration.administration'
+                url: tim/basketball/administration
+                icon: icon-user
+            Partners:
+                label: Partners
+                url: tim/basketball/partners
+                icon: icon-paw
+            administrationCategory:
+                label: 'Administration Category'
+                url: tim/basketball/administrationcategories
+                icon: icon-users

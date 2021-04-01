@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b7f14195-9680-4b82-9fe2-e68a58324237" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ProjectId" id="1p9ArJw8WOfMmt4JjMkpB6W90iC" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/tim/basketball/controllers/administration" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball\assets\libs" />
+      <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball\assets\thumbnailSlider" />
+      <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball\assets\images" />
+      <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PhpstormProjects\another_projects\basketball.uzbekistan\plugins\tim\basketball\controllers\administration" />
+      <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b7f14195-9680-4b82-9fe2-e68a58324237" name="Default Changelist" comment="" />
+      <created>1614585129580</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614585129580</updated>
+      <workItem from="1614585130874" duration="2673000" />
+      <workItem from="1614590546784" duration="29000" />
+      <workItem from="1614591437430" duration="8954000" />
+      <workItem from="1614667687633" duration="29063000" />
+      <workItem from="1614831444208" duration="9819000" />
+      <workItem from="1614923507896" duration="2662000" />
+      <workItem from="1614931802951" duration="2399000" />
+      <workItem from="1615015093058" duration="1310000" />
+      <workItem from="1615263318566" duration="2541000" />
+      <workItem from="1615526224819" duration="5097000" />
+      <workItem from="1615536882895" duration="8047000" />
+      <workItem from="1615610976438" duration="303000" />
+      <workItem from="1615974058510" duration="4940000" />
+      <workItem from="1617273020204" duration="454000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

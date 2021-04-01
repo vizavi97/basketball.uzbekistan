@@ -1,0 +1,46 @@
+description = "Главный слайдер"
+
+[viewBag]
+==
+<div class="owl-carousel owl-theme main-banner">
+  <div class="main-banner-container">
+  	<div class='main-banner-img'>
+  		<img src="http://uzbekistan.basketball/images/slideshow/444.jpg" alt="slider">
+  	</div>
+  	<div class='main-banner-content'>
+  		<h6>Событие</h6>
+  		<h2><a href="#">Федерация баскетбола Узбекистана</a></h2>
+      <ul>
+      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
+          <li><i class="fa fa-user"></i> By <a href="#"></a></li>
+      </ul>
+  	</div>
+  </div>
+	  <div class="main-banner-container">
+  	<div class='main-banner-img'>
+  		<img src="http://uzbekistan.basketball/images/slideshow/444.jpg" alt="slider">
+  	</div>
+  	<div class='main-banner-content'>
+  		<h6>Событие</h6>
+  		<h2><a href="#">Федерация баскетбола Узбекистана</a></h2>
+      <ul>
+      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
+          <li><i class="fa fa-user"></i> By <a href="#"></a></li>
+      </ul>
+  	</div>
+  </div>
+
+</div>
+
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

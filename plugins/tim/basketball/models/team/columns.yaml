@@ -1,0 +1,14 @@
+columns:
+    name:
+        label: 'tim.basketball::lang.plugin.name'
+        type: text
+        searchable: true
+        sortable: true
+    address:
+        label: 'tim.basketball::lang.team.address'
+        type: text
+        sortable: true
+    id:
+        label: id
+        type: number
+        sortable: true

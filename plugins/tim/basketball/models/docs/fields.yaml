@@ -1,0 +1,21 @@
+fields:
+    title:
+        label: 'tim.basketball::lang.docs.title'
+        span: full
+        required: 1
+        type: text
+    docs:
+        label: 'tim.basketball::lang.docs.docs'
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload
+    desription:
+        label: 'tim.basketball::lang.docs.desription'
+        span: full
+        size: ''
+        type: richeditor

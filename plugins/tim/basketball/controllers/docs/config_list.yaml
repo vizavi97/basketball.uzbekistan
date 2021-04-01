@@ -1,0 +1,12 @@
+title: Docs
+modelClass: Tim\Basketball\Models\Docs
+list: $/tim/basketball/models/docs/columns.yaml
+recordUrl: 'tim/basketball/docs/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

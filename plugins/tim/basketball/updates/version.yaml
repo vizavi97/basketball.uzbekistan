@@ -1,0 +1,47 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Drop table tim_basketball_teams_categories'
+    - builder_table_delete_tim_basketball_teams_categories.php
+1.0.3:
+    - 'Created table tim_basketball_teams'
+    - builder_table_create_tim_basketball_teams.php
+1.0.4:
+    - 'Created table tim_basketball_docs'
+    - builder_table_create_tim_basketball_docs.php
+1.0.5:
+    - 'Created table tim_basketball_administration'
+    - builder_table_create_tim_basketball_administration.php
+1.0.6:
+    - 'Updated table tim_basketball_administration'
+    - builder_table_update_tim_basketball_administration.php
+1.0.7:
+    - 'Updated table tim_basketball_docs'
+    - builder_table_update_tim_basketball_docs.php
+1.0.8:
+    - 'Updated table tim_basketball_teams'
+    - builder_table_update_tim_basketball_teams.php
+1.0.9:
+    - 'Created table tim_basketball_partners'
+    - builder_table_create_tim_basketball_partners.php
+1.0.10:
+    - 'Created table tim_basketball_administration_categories'
+    - builder_table_create_tim_basketball_administration_categories.php
+1.0.11:
+    - 'Updated table tim_basketball_administration_categories'
+    - builder_table_update_tim_basketball_administration_categories.php
+1.0.12:
+    - 'Drop table tim_basketball_administration_cats_relation'
+    - builder_table_delete_tim_basketball_administration_cats_relation.php
+1.0.13:
+    - 'Drop table tim_basketball_adminitration_relations'
+    - builder_table_delete_tim_basketball_adminitration_relations.php
+1.0.14:
+    - 'Drop table tim_basketball_administration_categories_relations'
+    - builder_table_delete_tim_basketball_administration_categories_relations.php
+1.0.15:
+    - 'Drop table tim_basketball_administration_categories'
+    - builder_table_delete_tim_basketball_administration_categories.php
+1.0.16:
+    - 'Created table tim_basketball_administration_categories'
+    - builder_table_create_tim_basketball_administration_categories_2.php

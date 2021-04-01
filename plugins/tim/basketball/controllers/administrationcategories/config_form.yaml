@@ -1,0 +1,11 @@
+name: AdministrationCategories
+modelClass: Tim\Basketball\Models\AdministrationCategories
+form: $/tim/basketball/models/administrationcategories/fields.yaml
+defaultRedirect: tim/basketball/administrationcategories
+create:
+    redirect: 'tim/basketball/administrationcategories/update/:id'
+    redirectClose: tim/basketball/administrationcategories
+update:
+    redirect: tim/basketball/administrationcategories
+    redirectClose: tim/basketball/administrationcategories
+preview: {  }

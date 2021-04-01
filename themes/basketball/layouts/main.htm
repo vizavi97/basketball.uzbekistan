@@ -1,0 +1,94 @@
+description = "Главный шаблон"
+==
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="canonical" href="http://uzbekistan.basketball/ru/">
+  <meta charset="utf-8">
+  <meta name="description" content="Федерация баскетбола Узбекистана">
+  <link href="{{'assets/favicon/favicon.png' | theme}}" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="{{'assets/css/styles.css' | theme}}"
+        crossorigin="anonymous">
+
+  <title>Главная</title>
+  {% styles %}
+</head>
+<body>
+<main>
+  <header class="header">
+    <div class="header-top">
+      <div class="header-top-container container">
+        <div class="header-top-logo">
+          <img src="{{'assets/images/4.png' | theme}}" alt="logo"/>
+        </div>
+        <div class="header-top-date">
+          <i class="fas fa-calendar-alt"></i>
+          <time datetime="2021-03-02T10:00:07+05:00">Вторник, марта 02, 2021</time>
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="header-menu-container container">
+        <div class="header-menu-toggle">
+          <i class="fas fa-align-left"></i>
+        </div>
+        <nav class="header-menu-nav">
+          <ul class="header-menu-nav-items">
+            <li class="header-menu-nav-item">
+              <a href="javascript:" class="header-menu-nav-item">
+                Главная
+              </a>
+            </li>
+            <li class="header-menu-nav-item">
+              <a href="javascript:" class="header-menu-nav-item">
+                Федерация
+              </a>
+            </li>
+            <li class="header-menu-nav-item">
+              <a href="javascript:" class="header-menu-nav-item">
+                Мероприятия
+              </a>
+            </li>
+            <li class="header-menu-nav-item">
+              <a href="javascript:" class="header-menu-nav-item">
+                Документы
+              </a>
+            </li>
+            <li class="header-menu-nav-item">
+              <a href="javascript:" class="header-menu-nav-item">
+                Контакты
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <aside></aside>
+
+</main>
+{% page %}
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
+        integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

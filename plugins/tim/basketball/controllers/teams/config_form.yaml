@@ -1,0 +1,11 @@
+name: Teams
+modelClass: Tim\Basketball\Models\Team
+form: $/tim/basketball/models/team/fields.yaml
+defaultRedirect: tim/basketball/teams
+create:
+    redirect: 'tim/basketball/teams/update/:id'
+    redirectClose: tim/basketball/teams
+update:
+    redirect: tim/basketball/teams
+    redirectClose: tim/basketball/teams
+preview: {  }

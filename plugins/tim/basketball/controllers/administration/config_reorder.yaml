@@ -1,0 +1,5 @@
+title: AdministrationCategories
+modelClass: Tim\Basketball\Models\AdministrationCategories
+nameFrom: AdministrationCategories
+toolbar:
+    buttons: reorder_toolbar

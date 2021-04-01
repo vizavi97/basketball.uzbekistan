@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: 'tim.basketball::lang.docs.id'
+        type: number
+        searchable: true
+        sortable: true
+    title:
+        label: 'tim.basketball::lang.docs.title'
+        type: text
+        searchable: true
+        sortable: true

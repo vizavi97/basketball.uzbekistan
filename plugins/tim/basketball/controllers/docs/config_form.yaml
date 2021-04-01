@@ -1,0 +1,10 @@
+name: Docs
+form: $/tim/basketball/models/docs/fields.yaml
+modelClass: Tim\Basketball\Models\Docs
+defaultRedirect: tim/basketball/docs
+create:
+    redirect: 'tim/basketball/docs/update/:id'
+    redirectClose: tim/basketball/docs
+update:
+    redirect: tim/basketball/docs
+    redirectClose: tim/basketball/docs

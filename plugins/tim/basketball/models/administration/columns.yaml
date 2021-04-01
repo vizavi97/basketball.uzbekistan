@@ -1,0 +1,21 @@
+columns:
+    id:
+        label: 'tim.basketball::lang.docs.id'
+        type: number
+        searchable: true
+        sortable: true
+    name:
+        label: 'tim.basketball::lang.administration.name'
+        type: text
+        searchable: true
+        sortable: true
+    surname:
+        label: 'tim.basketball::lang.administration.surname'
+        type: text
+        searchable: true
+        sortable: true
+    position:
+        label: 'tim.basketball::lang.administration.position'
+        type: text
+        searchable: true
+        sortable: true
