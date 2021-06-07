@@ -1,0 +1,68 @@
+title = "Сборная"
+url = "/national/:team"
+layout = "national"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Basketball\Models\NationalTeams;
+use Tim\Basketball\Models\Player;
+
+function onStart() {
+	$this['team'] = NationalTeams::where('slug', $this->param('team'))->first();
+	$this["players"] = Player::whereHas('national', function($q) {
+		$q->where('national_teams_id', $this['team']->id);
+	})->get();
+}
+?>
+==
+<div class='teams-profile'>
+	<div class='container'>
+		<div class='teams-profile-info'>
+			<div class="row">
+				<div class="col-md-4">
+					<div class='teams-profile-logo'>
+						{% if team.img is defined and team.img is not empty %}
+							<img src="{{team.img.getPath()}}" alt="{{team.name}}">
+						{% else %}
+							<img src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png' | theme}}" alt="staff">
+						{% endif %}
+					</div>				
+				</div>
+				<div class="col-md-8">
+					<div class='teams-profile-description'>
+						<h1>{{team.title}}</h1>
+						{{team.description|raw}}
+					</div>			
+				</div>
+			</div>		
+		</div>
+		
+		<h2 class='text-center'>{{"Состав Команды"}}</h2>
+		<div class='teams-players'>
+			<div class="row">			
+				{%for player in players if player.is_publish%}
+					<div class="col-md-3">
+					<div class="teams-player-card">
+						<div class="teams-player-card-img">
+							{% if player.national_preview_img is defined and player.national_preview_img is not empty %}
+								<img src="{{player.national_preview_img.getPath()}}" alt="{{player.national_preview_img.name}}">
+							{%elseif  player.preview_img is defined and player.preview_img is not empty %}
+								<img src="{{player.preview_img.getPath()}}" alt="{{player.preview_img.name}}">
+							{% else %}
+								<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+							{% endif %}
+							</div>
+						<div class="teams-player-card-name">
+							<h4>{{player.surname ~ " " ~ player.name ~ " " ~ player.father_name}}</h4>
+							<h6>{{"Игровой номер: "|_}}{{player.national_number is not null ? player.national_number : "-"}}</h6>
+							<h6><small>{{player.position}}</small></h6>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+	</div>
+</div>

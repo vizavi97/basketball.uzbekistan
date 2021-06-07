@@ -1,111 +1,62 @@
 description = "Статьи и новости"
 
 [viewBag]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "stati"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news/news-list"
+postPage = "news/news-detail"
 ==
 <div class='articles'>
 		<div class='container'>
 			<div class='aritcles-container'>
 				<div class='aritcles-headline headline'>
-					<h2>Интересное</h2>
+					<h2>{{"Статьи"|_}}</h2>
 				</div>
-					<ul class='articles-list row'>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
+					<div class='articles-list row owl-carousel owl-theme partners'>
+						{% for item in posts %}
+								<div class='articles-item'>
+									<div class='articles-item-img'>
+										<a href="{{item.url}}">
+											{% if item.featured_images is empty %}
+														<img src="{{'assets/images/resized/a54b0cd0367d90b936c692c83fdadff5.jpg'|theme}}" alt="{{item.title}}">
+												{% else %}
+												{% for image in item.featured_images|slice(0,1) %}
+													<img 
+															data-src="{{ image.filename }}"
+															src="{{ image.path }}"
+															alt="{{ image.description }}"> 
+										    {% endfor %}							
+											{% endif %}
 										</a>
-									</h6>
+									</div>
+									<div class='articles-item-content'>
+										<h6>
+											<a href="{{item.url}}">
+												{{item.title}}
+											</a>
+										</h6>
+									</div>
 								</div>
-							</div>
-						</li>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
-										</a>
-									</h6>
-								</div>
-							</div>
-						</li>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
-										</a>
-									</h6>
-								</div>
-							</div>
-						</li>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
-										</a>
-									</h6>
-								</div>
-							</div>
-						</li>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
-										</a>
-									</h6>
-								</div>
-							</div>
-						</li>
-						<li class='col-md-2'>
-							<div class='articles-item'>
-								<div class='articles-item-img'>
-									<a href="javascript">
-										<img src="http://uzbekistan.basketball/cache/resized/a54b0cd0367d90b936c692c83fdadff5.jpg" alt="article-name">
-									</a>
-								</div>
-								<div class='articles-item-content'>
-									<h6>
-										<a href="javascript;">
-											Статья №
-										</a>
-									</h6>
-								</div>
-							</div>
-						</li>
-					</ul>
+						{% endfor %}
+					</div>
 			</div>
 		</div>
 </div>
+
+{% put styles %}
+	<link rel="stylesheet"
+	      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+	      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+	<script type="text/javascript"
+	        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+	<script type="text/javascript"
+	        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

@@ -19,3 +19,6 @@ columns:
         type: text
         searchable: true
         sortable: true
+    number:
+        label: Порядок
+        type: number

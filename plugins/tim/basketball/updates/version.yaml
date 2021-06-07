@@ -45,3 +45,147 @@
 1.0.16:
     - 'Created table tim_basketball_administration_categories'
     - builder_table_create_tim_basketball_administration_categories_2.php
+1.0.17:
+    - 'Created table tim_basketball_administration'
+    - builder_table_create_tim_basketball_administration_2.php
+1.0.18:
+    - 'Updated table tim_basketball_administration'
+    - builder_table_update_tim_basketball_administration_3.php
+1.0.19:
+    - 'Updated table tim_basketball_administration'
+    - builder_table_update_tim_basketball_administration_4.php
+1.0.20:
+    - 'Updated table tim_basketball_administration'
+    - builder_table_update_tim_basketball_administration_5.php
+1.0.21:
+    - 'Updated table tim_basketball_administration'
+    - builder_table_update_tim_basketball_administration_6.php
+1.0.22:
+    - 'Updated table tim_basketball_teams'
+    - builder_table_update_tim_basketball_teams_2.php
+1.0.23:
+    - 'Created table tim_basketball_events'
+    - builder_table_create_tim_basketball_events.php
+1.0.24:
+    - 'Drop table tim_basketball_administration_categories'
+    - builder_table_delete_tim_basketball_administration_categories_2.php
+1.0.25:
+    - 'Drop table tim_basketball_administration_relations'
+    - builder_table_delete_tim_basketball_administration_relations.php
+1.0.26:
+    - 'Created table tim_basketball_players'
+    - builder_table_create_tim_basketball_players.php
+1.0.27:
+    - 'Updated table tim_basketball_docs'
+    - builder_table_update_tim_basketball_docs_2.php
+1.0.28:
+    - 'Created table tim_basketball_players_teams'
+    - builder_table_create_tim_basketball_players_teams.php
+1.0.29:
+    - 'Updated table tim_basketball_players'
+    - builder_table_update_tim_basketball_players.php
+1.0.30:
+    - 'Created table tim_basketball_national_teams'
+    - builder_table_create_tim_basketball_national_teams.php
+1.0.31:
+    - 'Created table tim_basketball_matches'
+    - builder_table_create_tim_basketball_matches.php
+1.0.32:
+    - 'Created table tim_basketball_match_team_home'
+    - builder_table_create_tim_basketball_match_team_home.php
+1.0.33:
+    - 'Updated table tim_basketball_match_team_home'
+    - builder_table_update_tim_basketball_match_team_versus.php
+1.0.34:
+    - 'Updated table tim_basketball_match_team_versus'
+    - builder_table_update_tim_basketball_match_team_home.php
+1.0.35:
+    - 'Created table tim_basketball_match_team_versus'
+    - builder_table_create_tim_basketball_match_team_versus.php
+1.0.36:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches.php
+1.0.37:
+    - 'Created table tim_basketball_match_event'
+    - builder_table_create_tim_basketball_match_event.php
+1.0.38:
+    - 'Updated table tim_basketball_match_team_versus'
+    - builder_table_update_tim_basketball_match_team_versus_2.php
+1.0.39:
+    - 'Updated table tim_basketball_match_team_versus'
+    - builder_table_update_tim_basketball_match_team_versus_3.php
+1.0.40:
+    - 'Updated table tim_basketball_match_team_home'
+    - builder_table_update_tim_basketball_match_team_home_2.php
+1.0.41:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_2.php
+1.0.42:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_3.php
+1.0.43:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_4.php
+1.0.44:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_5.php
+1.0.45:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_6.php
+1.0.46:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_7.php
+1.0.47:
+    - 'Drop table tim_basketball_match_team_home'
+    - builder_table_delete_tim_basketball_match_team_home.php
+1.0.48:
+    - 'Drop table tim_basketball_match_team_versus'
+    - builder_table_delete_tim_basketball_match_team_versus.php
+1.0.49:
+    - 'Drop table tim_basketball_match_event'
+    - builder_table_delete_tim_basketball_match_event.php
+1.0.50:
+    - 'Created table tim_basketball_calendar'
+    - builder_table_create_tim_basketball_calendar.php
+1.0.51:
+    - 'Updated table tim_basketball_calendar'
+    - builder_table_update_tim_basketball_calendar.php
+1.0.52:
+    - 'Updated table tim_basketball_events'
+    - builder_table_update_tim_basketball_events.php
+1.0.53:
+    - 'Updated table tim_basketball_teams'
+    - builder_table_update_tim_basketball_teams_3.php
+1.0.54:
+    - 'Updated table tim_basketball_teams'
+    - builder_table_update_tim_basketball_teams_4.php
+1.0.55:
+    - 'Updated table tim_basketball_calendar'
+    - builder_table_update_tim_basketball_calendar_2.php
+1.0.56:
+    - 'Updated table tim_basketball_calendar'
+    - builder_table_update_tim_basketball_calendar_3.php
+1.0.57:
+    - 'Updated table tim_basketball_national_teams'
+    - builder_table_update_tim_basketball_national_teams.php
+1.0.58:
+    - 'Updated table tim_basketball_national_teams'
+    - builder_table_update_tim_basketball_national_teams_2.php
+1.0.59:
+    - 'Updated table tim_basketball_national_teams'
+    - builder_table_update_tim_basketball_national_teams_3.php
+1.0.60:
+    - 'Created table tim_basketball_players_national_teams'
+    - builder_table_create_tim_basketball_players_national_teams.php
+1.0.61:
+    - 'Updated table tim_basketball_players_national_teams'
+    - builder_table_update_tim_basketball_players_national_teams.php
+1.0.62:
+    - 'Updated table tim_basketball_players'
+    - builder_table_update_tim_basketball_players_2.php
+1.0.63:
+    - 'Updated table tim_basketball_calendar'
+    - builder_table_update_tim_basketball_calendar_4.php
+1.0.64:
+    - 'Updated table tim_basketball_calendar'
+    - builder_table_update_tim_basketball_calendar_5.php

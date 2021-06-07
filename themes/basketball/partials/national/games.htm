@@ -1,0 +1,47 @@
+[viewBag]
+==
+<div class='games-container'>
+	<div class='owl-carousel owl-theme games'>
+		<div class="game-item">
+			<div class='game-item-header'>
+					<div class="game-item-tournament">
+						<span>КЧА U-16 <br>Групповой этап</span>
+					</div>
+					<div class="game-item-time">
+						<span>21.05.2019 (Вт), 18:00</span>
+					</div>
+					<div class="game-item-place">
+						<span>Тараз-Арена (Тараз)</span>
+					</div>
+			</div>
+			<div class="game-item-container">
+				<div class="game-item-team">
+					<img src="https://nbf.kz/_images/team_season/logo_lng_ru_shri-lanka_-_mujchiny_1613675673.png" alt="">
+				</div>
+				<div class="game-item-score">
+						<h2>82:49</h2>
+				</div>
+				<div class="game-item-team">
+					<img src="https://nbf.kz/_images/team/logo_lng_ru_uzbekistan_-_yunoshi_u16_1556828544.png" alt="">
+				</div>					
+			</div>
+			<div  class="game-item-state">
+				<span>Основное время</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

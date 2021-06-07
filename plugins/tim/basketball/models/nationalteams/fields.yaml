@@ -1,0 +1,41 @@
+fields:
+    title:
+        label: Заголовок/Название
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: 'tim.basketball::lang.team.slug'
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    short_title:
+        label: 'Короткое название'
+        span: auto
+        type: text
+    description:
+        label: 'Полное Описание'
+        size: ''
+        span: full
+        required: 1
+        type: richeditor
+    preview_img:
+        label: 'tim.basketball::lang.administration.preview_img'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    images:
+        label: 'Фотографии для фото галереи'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

@@ -1,0 +1,29 @@
+title = "Галерея"
+url = "/gallery/:slug"
+layout = "main"
+is_hidden = 0
+
+[gallerySlug]
+slug = "{{ :slug }}"
+lang = "Галерея"
+jqueryinject = "yes"
+thumbnail = "true"
+caption = "true"
+desc = "true"
+counter = "true"
+controls = "true"
+preload = 1
+mode = "lg-slide"
+speed = 600
+loop = "true"
+auto = "false"
+pause = 2000
+escKey = "true"
+height = 560
+width = 560
+resizer = "auto"
+==
+<div class="container photo-gallery">
+		{%component "gallerySlug"%}
+</div>
+<!-- End Gallery -->

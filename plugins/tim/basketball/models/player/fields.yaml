@@ -1,0 +1,109 @@
+fields:
+    is_publish:
+        label: Опубликовать
+        span: auto
+        type: switch
+    name:
+        label: Имя
+        span: auto
+        required: 1
+        type: text
+    surname:
+        label: Фамилия
+        span: auto
+        required: 1
+        type: text
+    father_name:
+        label: Отчество
+        span: auto
+        type: text
+    birth:
+        label: 'Дата рождения'
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    nationality:
+        label: Национальность
+        span: auto
+        required: 1
+        type: text
+    number:
+        label: 'Игровой Номер'
+        span: auto
+        required: 1
+        type: number
+    team:
+        label: Команда
+        nameFrom: name
+        descriptionFrom: gender
+        select: 'concat(name, '' '', gender)'
+        span: auto
+        required: 1
+        type: relation
+    born_place:
+        label: 'Место рождения'
+        span: auto
+        type: text
+    citizenship:
+        label: Гражданство
+        span: auto
+        type: text
+    height:
+        label: Рост
+        span: auto
+        required: 1
+        type: number
+    weight:
+        label: Вес
+        span: auto
+        type: number
+    preview_img:
+        label: 'Фотография Игрока'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    position:
+        label: Позиция
+        options:
+            'Атакующий защитник': 'Атакующий защитник'
+            Комбогард: Комбогард
+            Комбофорвард: Комбофорвард
+            'Лёгкий форвард': 'Лёгкий форвард'
+            Поинтфорвард: Поинтфорвард
+            'Разыгрывающий защитник': 'Разыгрывающий защитник'
+            Свингмен: Свингмен
+            'Тяжёлый форвард': 'Тяжёлый форвард'
+            Центровой: Центровой
+            Центрфорвард: Центрфорвард
+        span: auto
+        required: 1
+        type: radio
+tabs:
+    fields:
+        national:
+            label: 'Национальная сборная'
+            nameFrom: short_title
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Национальные сборные'
+        national_number:
+            label: 'Номер в сборной'
+            span: auto
+            type: number
+            tab: 'Национальные сборные'
+        national_preview_img:
+            label: 'Фотография в форме сборной'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Национальные сборные'

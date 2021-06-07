@@ -1,0 +1,63 @@
+title = "Турниры"
+url = "/tournaments/:slug"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Basketball\Models\Event;
+use Tim\Basketball\Models\Team;
+
+function onStart() {
+	$events = $this['events'] = Event::all();
+	$slug = $this->param('slug');
+	if($slug == 'main') {
+		$main_event = Event::where('is_main', true)->first();
+	}
+	else{
+		$main_event = Event::where('slug', $slug)->first();
+	}
+	$this['teams'] = Team::where('tournament_id',$main_event->id)->get(); 
+	$this['event'] = $main_event;
+}
+?>
+==
+{% partial 'tournaments/headline' event=event events=events %}
+<section class='tournaments'>
+	<div class='container'>
+		<div class='tournaments-container'>
+			<div class='tournaments-nav'>
+					<ul class="nav nav-tabs tournaments-nav-list">
+					  <li><a href="#">О турнире</a></li>
+					  <li><a href="#">Новости</a></li>
+					  <li><a href="#">Фото</a></li>
+					  <li><a href="#">Видео</a></li>
+					  <li><a href="#">Команды</a></li>
+					  <li><a href="#">Расписание</a></li>
+					  <li class=" active"><a href="?category_tournament=table&amp;season=16&amp;tournament_type=1&amp;tournament=212">Таблицы</a>
+					  </li>
+					  <li><a href="#">Статистика
+					    команд</a></li>
+					  <li><a href="#">Статистика
+					    игроков</a></li>
+					  <li><a href="#">Рекорды</a></li>
+					  <li><a href="#">Лидеры</a></li>
+					</ul>
+			</div>
+			<div class='tournament-table'>
+				{% partial 'tournaments/table' teams=teams %}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Partners -->
+{% partial 'main/partners' %}
+
+{%put styles%}
+  <link rel="stylesheet"
+        href="{{'assets/css/tournaments.css' | theme}}"
+        crossorigin="anonymous">
+{%endput%}

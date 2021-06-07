@@ -1,0 +1,49 @@
+fields:
+    title:
+        label: 'Название Турнира'
+        span: left
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
+        type: text
+    time_start:
+        label: 'Время начала'
+        mode: date
+        span: auto
+        type: datepicker
+    time_end:
+        label: 'Время окончания'
+        mode: date
+        span: auto
+        type: datepicker
+    address:
+        label: 'Место проведения турнира'
+        span: auto
+        type: text
+    preview_img:
+        label: 'Превью Турнира'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    is_over:
+        label: 'Турнир закончен'
+        span: auto
+        type: checkbox
+    short_desc:
+        label: 'Описание турнира'
+        size: large
+        span: full
+        type: richeditor
+    is_main:
+        label: 'Основной Турнир (при нажатии будет первым в списке)'
+        span: auto
+        type: switch

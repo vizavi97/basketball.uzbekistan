@@ -1,0 +1,38 @@
+description = "Наши партнеры - главная"
+
+[viewBag]
+==
+<?php
+use Tim\Basketball\Models\Partners;
+
+
+function onStart(){
+	$this['partners'] =	Partners::all();
+}
+?>
+==
+<div class='container'>
+	<div class="owl-carousel owl-theme partners">
+		{% for partner in partners %}
+				<div class='partners-item'>
+					<div>
+						<img src="{{partner.img.getpath()}}" alt="{{partner.name}}">
+					</div>
+				</div>
+			{% endfor %}
+	</div>
+</div>
+
+
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

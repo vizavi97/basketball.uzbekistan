@@ -1,0 +1,94 @@
+[viewBag]
+==
+<?php
+use Tim\Basketball\Models\Calendar;
+
+function onStart() {
+	$type = $this['type'];
+	$calendar = Calendar::where('type', 'LIKE', '%'.$type.'%')->get();
+	$this['calendar'] = $calendar;
+}
+?>
+==
+<!-- <div id="myCalendar" class="vanilla-calendar mr-2"></div> -->
+<div id="container"></div>
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/libs/vanilla-calendar-master/vanilla-calendar.css' | theme}}"
+      crossorigin="anonymous">
+<link rel="stylesheet"
+      href="{{'assets/libs/animated-event-calendar/simple-calendar.css' | theme}}"
+      crossorigin="anonymous">
+      
+<style>
+	#container .day {
+		text-align: center;
+	}
+	#container .calendar .day.today {
+    background: #e10a30;
+    color: white;
+	}
+	#container .calendar .day:hover {
+    border: 2px solid #212529;
+	}
+	#container .calendar .day.has-event:after {
+    background: #e10a30;
+	}
+	#container .event-container {
+    padding: 5rem 0 1rem;
+		background: #f3f3f3;
+		border: 2px solid #22222260;
+	}
+	#container .event {
+		background: #ffffff;
+		color: #111;
+	}
+	#container .event-container .close:before, #container .event-container .close:after {
+		background: #000;
+	}
+</style>
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/animated-event-calendar/jquery.simple-calendar.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/libs/vanilla-calendar-master/vanilla-calendar.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+<script>
+//	var myCalendar = new VanillaCalendar({
+//	    selector: "#myCalendar",
+//	    pastDates: false
+//	})
+var calendar = [];
+var arr = {{ calendar|json_encode|raw }};
+var i;
+for(i = 0; i < arr.length; i++) {
+	var d = new Date(arr[i].date.replace(/-/g,"/"))
+	d.setHours(d.getHours() + 5)
+	var obj = {
+      startDate: d,
+      endDate: d,
+      summary: arr[i].event
+    }
+    calendar.push(obj)
+}
+
+$("#container").simpleCalendar({
+
+  // displays events
+  displayEvent: true,
+
+  // event dates
+  events: calendar,
+
+  // disable showing event details
+  disableEventDetails: false,
+
+  // disable showing empty date details
+  disableEmptyDetails: false 
+
+});
+</script>
+{% endput %}

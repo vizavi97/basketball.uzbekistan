@@ -1,0 +1,67 @@
+[viewBag]
+==
+<div class="col-md-6">
+				<div class='news-block-main'>
+					<div class='news-block-main-img'>
+						<a href="#">
+							{% if posts[0].featured_images is empty %}
+									<img src="{{'assets/images/resized/c29834e0309eaf3c6ca840f8c8d301b8.jpg'|theme}}" alt="banner">		
+							{% else %}
+								{% for image in posts[0].featured_images|slice(0,1) %}
+									<img 
+											data-src="{{ image.filename }}"
+											src="{{ image.path }}"
+											alt="{{ image.description }}"> 
+						    {% endfor %}							
+							{% endif %}
+						</a>
+					</div>
+					<div class="news-block-main-content banner-content shadow">
+			  		{% if not category %}
+								<h6>Category not found</h6>
+						{% else %}
+								<h6>{{category.name}}</h6>
+						{%endif%}
+			  		<h4><a href="{{ posts[0].url }}">{{ posts[0].title }}</a></h4>
+			      <ul>
+			      	<li><i class="far fa-clock"></i><span>{{ "Posted on :date"|_({date: posts[0].published_at|date('y:m:d')})}}</span></li>
+			      </ul>
+					</div>
+				</div>
+				<ul class='news-block-list row'>
+					<li class='news-block-item col-6'>
+						<div class="news-block-item-img">
+							<a href="#">
+								<img src="{{'assets/images/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg'|theme}}" alt="banner">
+							</a>
+						</div>
+						<div class="news-block-item-category">
+							<a href="#">Новости</a>
+						</div>
+						<div class="news-block-item-headline">
+							<h6><a href="#">Очередной визит в очередной Университет!</a></h6>
+						</div>
+						<ul class="news-block-item-props desc">
+			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
+			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
+						</ul>
+					</li>
+					<li class='news-block-item col-6'>
+						<div class="news-block-item-img">
+							<a href="#">
+								<img src="{{'assets/images/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg'|theme}}" alt="banner">
+							</a>
+						</div>
+						<div class="news-block-item-category">
+							<a href="#">Новости</a>
+						</div>
+						<div class="news-block-item-headline">
+							<h6><a href="javascript;">Очередной визит в очередной Университет!</a></h6>
+						</div>
+						<ul class="news-block-item-props desc">
+			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
+			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>

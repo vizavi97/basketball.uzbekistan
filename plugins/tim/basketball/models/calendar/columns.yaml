@@ -1,0 +1,16 @@
+columns:
+    event:
+        label: event
+        type: text
+    date:
+        label: date
+        type: text
+    tournament_id:
+        label: tournament_id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

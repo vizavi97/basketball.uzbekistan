@@ -1,0 +1,29 @@
+title = "docs"
+url = "/documents"
+layout = "main"
+is_hidden = 0
+==
+<?php
+use Tim\Basketball\Models\Docs;
+
+function onStart() {
+	$this['documents'] = Docs::all();
+}
+?>
+==
+<div class='container'>
+	<h3 class='text-center'>Список документов</h3>
+	<ul class='docs-list'>
+		{% for document in documents %}
+			<li class='docs-item'>
+				<div class="docs-item-icon">
+					<i class="fas fa-file-upload"></i>
+				</div>
+				<div class="docs-item-links">
+					<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+					<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+				</div>
+		</li>
+		{% endfor %}
+	</ul>
+</div>

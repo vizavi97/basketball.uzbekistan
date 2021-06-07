@@ -13,6 +13,15 @@ class Administration extends Model
 
     protected $dates = ['deleted_at'];
 
+    public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
+
+    public $translatable = [
+					"name",
+					"surname",
+					"position",
+					"text",
+    ];
+
     public $attachOne = [
         'preview_img' => 'System\Models\File',
     ];

@@ -2,8 +2,16 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="2a5610f7-a56f-413d-8ae0-6419f2a8beba" name="basketball" url="http://92.53.96.254">
-        <fileTransfer host="92.53.96.254" port="21" rootFolder="/basketball/public_html">
+      <webServer id="d5b41f62-4713-4b54-ae19-28a65606cb10" name="reg.ru_basketball" url="http://194.67.105.132">
+        <fileTransfer host="194.67.105.132" port="21" rootFolder="/www/uzbekistan.basketball">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="0f3cf51d-da0a-407f-99a3-d25916013582" name="vizavi97_tmweb" url="http://188.225.40.161">
+        <fileTransfer host="188.225.40.161" port="21" rootFolder="/basketball/public_html">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

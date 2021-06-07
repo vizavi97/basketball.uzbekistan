@@ -13,7 +13,12 @@ class Team extends Model
 
 
     protected $dates = ['deleted_at'];
-
+    
+    public $belongsTo = [
+      'tournament' => [
+        	'Tim\Basketball\Models\Event',
+        	],
+    ];
 
     /**
      * @var string The database table used by the model.
@@ -29,4 +34,5 @@ class Team extends Model
     public $attachOne = [
     'img' => 'System\Models\File'
     ];
+    
 }

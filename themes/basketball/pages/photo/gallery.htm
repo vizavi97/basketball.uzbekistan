@@ -1,0 +1,25 @@
+title = "Фотогалерея"
+url = "/gallery"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[galleriesList]
+galleryPage = "photo/photo-list"
+categoryPage = "photo/photo-list"
+noGalleriesMessage = "No galleries found"
+==
+<ul class="container photo-gallery">
+		{% for gallery in galleries %}
+			<li class='row mb-2 d-flex align-items-center'>
+				<div class='col-md-5'>
+					<img src="{{gallery.images[0].getThumb(4000, 3000, {'mode':'exact'})}}" alt="{{gallery.name}}" class='rounded'>
+				</div>
+				<div class='col-md-7'><h3><a href="{{gallery.url}}">{{gallery.name}}</a></h3></div>
+			</li>
+		{% else %}
+			{{noGalleriesMessage}}
+		{% endfor %}
+</div>
+<!-- End Gallery -->

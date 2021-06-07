@@ -1,0 +1,10 @@
+name: Matches
+form: $/tim/basketball/models/match/fields.yaml
+modelClass: Tim\Basketball\Models\Match
+defaultRedirect: tim/basketball/matches
+create:
+    redirect: 'tim/basketball/matches/update/:id'
+    redirectClose: tim/basketball/matches
+update:
+    redirect: tim/basketball/matches
+    redirectClose: tim/basketball/matches

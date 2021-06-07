@@ -1,0 +1,4 @@
+title: Events
+modelClass: Tim\Basketball\Models\Event
+toolbar:
+    buttons: reorder_toolbar

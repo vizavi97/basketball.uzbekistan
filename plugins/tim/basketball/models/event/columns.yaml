@@ -1,0 +1,25 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+    time_start:
+        label: time_start
+        type: date
+    time_end:
+        label: time_end
+        type: date
+    is_over:
+        label: is_over
+        type: switch
+    address:
+        label: address
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

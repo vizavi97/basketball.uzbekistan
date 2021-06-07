@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://basketball.cv05345.tmweb.ru/',
+    'url' => 'http://uzbekistan.basketball/',
 
     /*
     |--------------------------------------------------------------------------
@@ -107,7 +107,7 @@ return [
     |
     */
 
-    'key' => '5eTVUwfkUEqZn2b2l2t494zeWB2rsg40',
+    'key' => 'R2iCklt45q2jWEOvvaoOGjcBIQawzU8f',
 
     'cipher' => 'AES-256-CBC',
 

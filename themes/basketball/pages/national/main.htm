@@ -1,0 +1,53 @@
+title = "Сборные"
+url = "/sbornye"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Basketball\Models\NationalTeams;
+
+function onStart() {
+	$this['nTeams'] = NationalTeams::where('slug','!=', 'empty')->get();
+}
+?>
+==
+{% partial 'national/headline' %}
+<section class='national'>
+	<div class='container'>
+		<div class='national-container'>
+				{% partial 'national/nav' teams=nTeams %}
+				<!-- games -->
+				{% partial 'national/games' %}
+				<div class='national-content px-4 mb-2'>
+					<div class='row'>
+						<div class='col-md-8'>
+							<div class='natitonal-news'>
+								{% partial 'national/news-slider' %}
+							</div>
+						</div>
+						<div class='col-md-4 mt-4'>
+							{% partial 'national/calendar' type='national' %}
+						</div>
+					</div>
+				</div>
+				<div class='national-news'>
+					{% partial 'national/news' %}
+				</div>
+				{% partial 'national/footer' %}
+		</div>
+	</div>
+</section>
+
+
+
+
+<!-- Partners -->
+{% partial 'main/partners' %}
+
+{%put styles%}
+  <link rel="stylesheet"
+        href="{{'assets/css/national.css' | theme}}"
+        crossorigin="anonymous">
+{%endput%}

@@ -1,0 +1,61 @@
+description = "Меню на основной версии сайта"
+
+[viewBag]
+==
+<div class="header-menu-container">
+	<div class='side-bar-toggler'>
+		<button type='button' id='toggler-btn' class='side-bar-toggler-button '>
+		  <i class="fas fa-align-left"></i>
+	  </button>
+	</div>
+  <nav class="header-menu-nav">
+    <ul class="header-menu-nav-items">
+      <li class="header-menu-nav-item">
+        <a href="{{'main/index' | page}}" class="header-menu-nav-item {%if this.page.id == "main-index"%} active {%endif%}">
+          {{"Главная" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'main/staff' | page}}" class="header-menu-nav-item {%if this.page.id == "main-staff"%} active {%endif%}">
+          {{"Федерация" | _}}
+        </a>
+      </li>
+		  <li class="header-menu-nav-item">
+			  <a href="{{'national/main' | page}}" class="header-menu-nav-item  {%if this.page.id == "national-main"%} active {%endif%}">
+			    {{"Сборные" | _}}
+			  </a>
+			</li> 
+      <li class="header-menu-nav-item">
+        <a href="{{'main/teams' | page}}" class="header-menu-nav-item {%if this.page.id == "main-teams"%} active {%endif%}">
+          {{"Команды"| _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'news/news-list' | page}}" class="header-menu-nav-item {%if this.page.id == "news-news-list"%} active {%endif%}">
+          {{"Новости" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'projects/section' | page}}" class="header-menu-nav-item  {%if this.page.id == "projects-section"%} active {%endif%}">
+          {{"Секции" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'main/docs' | page}}" class="header-menu-nav-item {%if this.page.id == "main-docs"%} active {%endif%}">
+          {{"Документы" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'photo/gallery' | page}}" class="header-menu-nav-item {%if this.page.id == "photo-gallery"%} active {%endif%}">
+          {{"Фотогалерея" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'main/contacts' | page}}" class="header-menu-nav-item {%if this.page.id == "main-contacts"%} active {%endif%}">
+          {{"Контакты" | _}}
+        </a>
+      </li>
+    </ul>
+  </nav>
+	{% partial 'site/language' %}
+</div>

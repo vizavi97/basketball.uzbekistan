@@ -1,0 +1,53 @@
+description = "footer"
+
+[viewBag]
+==
+<div class='container'>
+	<div class='footer-container'>
+		<div class='footer-logo'>
+			<a href="/">
+				<img src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}" alt="logo">
+			</a>
+		</div>
+		<ul class='footer-links'>
+			<li>
+				<a href="{{'index' | page}}">{{"Главная"| _}}</a>
+			</li>
+			<li>
+				<a href="{{'staff' | page}}">{{"Федерация"| _}}</a>
+			</li>
+			<li>
+				<a href="{{'teams' | page}}">{{"Команды"| _}}</a>
+			</li>
+			<li>
+				<a href="{{'docs' | page}}">{{"Документы" | _}}</a>
+			</li>
+			<li>
+				<a href="{{'contacts' | page}}">{{"Контакты" | _}}</a>
+			</li>
+		</ul>
+		<div class='footer-contacts'>
+			<a href="tel:{{phoneLink}}">{{"Контактные телефоны: "| _}} <i class="fas fa-phone mx-2"></i>  {{phone}}</a>
+			<br>
+			<a href="mailto:{{mail}}">{{"Email: "| _}} <i class="fas fa-envelope-open"></i>  {{mail}}</a>
+			<p>{{"Адрес: Мирабадский район, улица Тараса Шевченко 38а,"| _}} <br> {{"Ташкент"| _}}</p>
+			<ul class="social-icons">
+	  		<li class="social-icon-facebook">
+	  			<a target="_blank" href="http://instagram.com/uzbekistan.basketball" aria-label="facebook">
+		  			<i class="fab fa-instagram"></i>
+	  			</a>
+	  		</li>
+	  		<li class="social-icon-facebook">
+	  			<a target="_blank" href="https://www.facebook.com/UzbekistanBasketballFederation" aria-label="facebook">
+		  			<i class="fab fa-facebook"></i>
+	  			</a>
+	  		</li>
+	  		<li class="social-icon-facebook">
+	  			<a target="_blank" href="https://twitter.com/UzBasketball?s=09" aria-label="twitter">
+			  		<i class="fab fa-twitter"></i>
+	  			</a>
+	  		</li>
+  	</ul>
+		</div>
+	</div>
+</div>

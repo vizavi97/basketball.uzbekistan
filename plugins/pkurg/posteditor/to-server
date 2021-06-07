@@ -1,0 +1,6 @@
+echo "Ented comit description"
+read line
+git add .
+#git commit
+git commit -m "$line"
+git push origin master 

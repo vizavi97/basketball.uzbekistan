@@ -1,0 +1,41 @@
+[viewBag]
+==
+<div class='instagram mb-2'>
+	<div class='container'>
+		<div class='aritcles-headline headline'>
+			<h2>{{"Инстаграм"|_}}</h2>
+		</div>
+		<div id="instagram-feed-demo" class="instagram_feed"></div>
+	</div>
+</div>
+
+
+
+
+{%put scripts%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.instagramFeed/3.0.4/jquery.instagramFeed.min.js" integrity="sha512-/z6cDTmzplKFL9sRet94DsTK8ZdXIeIj4BZAVtjDKLG/DMl9lrQeOmVXMQrpb6KWwNNvqVAy+liFguc8jGOj6Q==" crossorigin="anonymous"></script>
+
+
+
+<script>
+	$(window).on('load', function(){
+	  $.instagramFeed({
+	    'username': 'uzbekistan.basketball',
+	    'container': "#instagram-feed-demo",
+	    'items': 4
+
+	  });
+	});
+</script>
+{%endput%}
+
+{%put styles%}
+<style>
+	.instagram_gallery a {
+		height: auto!important;
+	}
+	
+	
+</style>
+
+{%endput%}

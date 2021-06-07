@@ -1,116 +1,12 @@
-description = "Блок новостей"
+description = "Блог новостей"
 
 [viewBag]
 ==
 <div class="news-block mt-5">
 	<div class='container'>
 		<div class="row">
-			<div class="col-md-6">
-				<div class='news-block-main'>
-					<div class='news-block-main-img'>
-						<a href="javascript:">
-							<img src="http://uzbekistan.basketball/cache/resized/c29834e0309eaf3c6ca840f8c8d301b8.jpg" alt="banner">		
-						</a>
-					</div>
-					<div class="news-block-main-content banner-content shadow">
-			  		<h6>Событие</h6>
-			  		<h4><a href="#">Федерация баскетбола Узбекистана</a></h4>
-			      <ul>
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-			      </ul>
-					</div>
-				</div>
-				<ul class='news-block-list row'>
-					<li class='news-block-item col-md-6'>
-						<div class="news-block-item-img">
-							<a href="javascript;">
-								<img src="http://uzbekistan.basketball/cache/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg" alt="banner">
-							</a>
-						</div>
-						<div class="news-block-item-category">
-							<a href="javascript;">Новости</a>
-						</div>
-						<div class="news-block-item-headline">
-							<h6><a href="javascript;">Очередной визит в очередной Университет!</a></h6>
-						</div>
-						<ul class="news-block-item-props desc">
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-						</ul>
-					</li>
-					<li class='news-block-item col-md-6'>
-						<div class="news-block-item-img">
-							<a href="javascript;">
-								<img src="http://uzbekistan.basketball/cache/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg" alt="banner">
-							</a>
-						</div>
-						<div class="news-block-item-category">
-							<a href="javascript;">Новости</a>
-						</div>
-						<div class="news-block-item-headline">
-							<h6><a href="javascript;">Очередной визит в очередной Университет!</a></h6>
-						</div>
-						<ul class="news-block-item-props desc">
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<div class='news-block-main'>
-					<div class='news-block-main-img'>
-						<a href="javascript:">
-							<img src="http://uzbekistan.basketball/cache/resized/c29834e0309eaf3c6ca840f8c8d301b8.jpg" alt="banner">		
-						</a>
-					</div>
-					<div class="news-block-main-content banner-content shadow">
-			  		<h6>Событие</h6>
-			  		<h4><a href="#">Федерация баскетбола Узбекистана</a></h4>
-			      <ul>
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-			      </ul>
-					</div>
-				</div>
-				<ul class='news-block-list row'>
-					<li class='news-block-item col-md-6'>
-						<div class="news-block-item-img">
-							<a href="javascript;">
-								<img src="http://uzbekistan.basketball/cache/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg" alt="banner">
-							</a>
-						</div>
-						<div class="news-block-item-category">
-							<a href="javascript;">Новости</a>
-						</div>
-						<div class="news-block-item-headline">
-							<h6><a href="javascript;">Очередной визит в очередной Университет!</a></h6>
-						</div>
-						<ul class="news-block-item-props desc">
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-						</ul>
-					</li>
-					<li class='news-block-item col-md-6'>
-						<div class="news-block-item-img">
-							<a href="javascript;">
-								<img src="http://uzbekistan.basketball/cache/resized/096f5b67a1e9eddb3e2f3be55795f007.jpg" alt="banner">
-							</a>
-						</div>
-						<div class="news-block-item-category">
-							<a href="javascript;">Новости</a>
-						</div>
-						<div class="news-block-item-headline">
-							<h6><a href="javascript;">Очередной визит в очередной Университет!</a></h6>
-						</div>
-						<ul class="news-block-item-props desc">
-			      	<li><i class="far fa-clock"></i> 07 янв, 2019</li>
-			        <li><i class="fa fa-user"></i> By <a href="#"></a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+			{% partial 'main/news-left' %}
+			{% partial 'main/news-right' %}
 		</div>
 	</div>
 </div>

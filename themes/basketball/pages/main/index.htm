@@ -1,0 +1,29 @@
+title = "Главная"
+url = "/"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<!-- Main slider -->
+{% partial 'main/main-slider' %}
+<!-- News block -->
+{% partial 'main/news-block' %}
+<!-- Articles -->
+{#% partial 'main/articles' %#}
+<div class='container px-4 mb-2'>
+	<div class='row d-flex align-items-center justify-content-center'>
+		<div class='col-md-8'>
+			<div class='main-player'>
+				{% partial 'national/player' %}
+			</div>
+		</div>
+		<div class='col-md-4 mt-4'>
+			{% partial 'national/calendar' type='main' %}
+		</div>
+	</div>
+</div>
+<!-- Partners -->
+{% partial 'main/partners' %}
+
+<!-- % partial 'main/instagram-section' % -->

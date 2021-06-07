@@ -4,6 +4,17 @@ fields:
         span: full
         required: 1
         type: text
+    type:
+        label: 'Группа документа'
+        options:
+            reglaments: 'Регламенты и положения'
+            requests: 'Анкеты и заявки'
+            rules: 'Правила игры в баскетбол'
+            referees: Судейство
+            antodoping: Антидопинг
+            statistic: Статистика
+        span: auto
+        type: radio
     docs:
         label: 'tim.basketball::lang.docs.docs'
         mode: file

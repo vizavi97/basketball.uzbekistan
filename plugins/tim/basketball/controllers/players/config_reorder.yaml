@@ -1,0 +1,4 @@
+title: Players
+modelClass: Tim\Basketball\Models\Player
+toolbar:
+    buttons: reorder_toolbar

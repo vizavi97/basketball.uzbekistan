@@ -1,0 +1,29 @@
+fields:
+    event:
+        label: Событие
+        size: ''
+        span: full
+        type: richeditor
+tabs:
+    fields:
+        date:
+            label: Дата
+            mode: datetime
+            span: auto
+            type: datepicker
+            tab: 'Tab 1'
+        tournament:
+            label: 'Выбрать Турнир'
+            nameFrom: title
+            descriptionFrom: description
+            span: auto
+            type: relation
+            tab: 'Tab 1'
+        type:
+            label: 'Тип События'
+            options:
+                main: 'На главный календарь'
+                national: 'На календарь сборных'
+            span: auto
+            type: checkboxlist
+            tab: 'Tab 1'

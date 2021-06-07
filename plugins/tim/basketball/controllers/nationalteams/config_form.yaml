@@ -1,0 +1,10 @@
+name: NationalTeams
+form: $/tim/basketball/models/nationalteams/fields.yaml
+modelClass: Tim\Basketball\Models\NationalTeams
+defaultRedirect: tim/basketball/nationalteams
+create:
+    redirect: 'tim/basketball/nationalteams/update/:id'
+    redirectClose: tim/basketball/nationalteams
+update:
+    redirect: tim/basketball/nationalteams
+    redirectClose: tim/basketball/nationalteams

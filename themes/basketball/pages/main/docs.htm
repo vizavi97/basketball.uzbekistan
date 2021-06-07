@@ -1,0 +1,164 @@
+title = "docs"
+url = "/documents"
+layout = "main"
+is_hidden = 0
+==
+<?php
+use Tim\Basketball\Models\Docs;
+
+function onStart() {
+	$this['reglaments'] = Docs::where('type','reglaments')->get();
+	$this['requests'] = Docs::where('type','requests')->get();
+	$this['rules'] = Docs::where('type','rules')->get();
+	$this['referees'] = Docs::where('type','referees')->get();
+	$this['antodoping'] = Docs::where('type','antodoping')->get();
+	$this['statistic'] = Docs::where('type','statistic')->get();
+}
+?>
+==
+<div class='container'>
+	<h3 class='text-center'>Список документов</h3>
+	
+	{% if reglaments is not empty %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Регламенты и положения"|_}}</h5>
+			</div>	
+			<ul class='docs-list'>
+				{% for document in reglaments %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+	{% if requests is not empty %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Анкеты и заявки"|_}}</h5>	
+			</div>	
+			<ul class='docs-list'>
+				{% for document in requests %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+	
+	
+	{% if rules is not empty %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Правила игры в баскетбол"|_}}</h5>
+
+				
+			</div>	
+			<ul class='docs-list'>
+				{% for document in rules %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+	
+	
+	{% if referees is not empty %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Судейство"|_}}</h5>
+			</div>	
+			<ul class='docs-list'>
+				{% for document in referees %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+	
+	
+	{% if antodoping is not empty  %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+					<h5>{{"Антидопинг"|_}}</h5>
+			</div>	
+			<ul class='docs-list'>
+				{% for document in antodoping %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+	
+	
+	{% if statistic is not empty  %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Статистика"|_}}</h5>
+			</div>	
+			<ul class='docs-list'>
+				{% for document in statistic %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+	
+</div>

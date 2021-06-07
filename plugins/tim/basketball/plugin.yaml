@@ -14,6 +14,22 @@ navigation:
                 label: Teams
                 url: tim/basketball/teams
                 icon: icon-users
+            side-menu-item2:
+                label: Players
+                url: tim/basketball/players
+                icon: icon-user-md
+            side-menu-item4:
+                label: Matches
+                url: tim/basketball/matches
+                icon: icon-sitemap
+            side-menu-item5:
+                label: Calendar
+                url: tim/basketball/calendar
+                icon: icon-spinner
+            side-menu-item:
+                label: Events
+                url: tim/basketball/events
+                icon: icon-qq
             Docs:
                 label: 'tim.basketball::lang.docs.documents'
                 url: tim/basketball/docs
@@ -26,7 +42,7 @@ navigation:
                 label: Partners
                 url: tim/basketball/partners
                 icon: icon-paw
-            administrationCategory:
-                label: 'Administration Category'
-                url: tim/basketball/administrationcategories
-                icon: icon-users
+            side-menu-item3:
+                label: National-Teams
+                url: tim/basketball/nationalteams
+                icon: icon-openid

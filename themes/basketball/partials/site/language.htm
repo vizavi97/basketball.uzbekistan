@@ -1,0 +1,25 @@
+description = "Меню выбора языков"
+
+[viewBag]
+
+[localePicker]
+forceUrl = 0
+==
+<div class="language">
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				{% for code, name in locales %}
+				{{ code == activeLocale ? name }}
+				{% endfor %}
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				{% for code, name in locales %}
+						<li class="{{ code == activeLocale ? 'active' }}">
+						    <a class="language_selection_{{ code }}" href="{{''|app}}{{ '/' ~ code ~ localeLinks[code] }}">
+						            {{ name }}
+						    </a>
+						</li>
+				{% endfor %}
+			</ul>
+		</div>
+</div>

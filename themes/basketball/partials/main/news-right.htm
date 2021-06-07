@@ -1,0 +1,120 @@
+[viewBag]
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart() {
+	$this['posts'] = $posts = Post::whereHas('categories', function($q)
+	{
+    $q->where('slug', '!=', "chempionat");
+    $q->where('slug', '!=', "glavnaya");
+	})->where('published',true)->orderBy('published_at', 'desc')->get();
+}
+?>
+==
+<div class="col-md-6">
+	<div class='news-block-main'>
+		<div class='news-block-main-img'>
+			<a href="{{ 'news/news-detail' | page({ slug: posts[0].slug }) }}">
+				{% if posts[0].featured_images is empty %}
+							<img 
+								src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+								alt="UZBF">
+
+						{% else %}
+						{% for image in posts[0].featured_images|slice(0,1) %}
+							<img 
+									data-src="{{ image.filename }}"
+									src="{{ image.path }}"
+									alt="{{ image.description }}"> 
+				    {% endfor %}							
+					{% endif %}
+			</a>
+		</div>
+		<div class="news-block-main-content banner-content shadow">
+			{%for category in  posts[0].categories if category.slug != "glavnaya" %}
+					<h6>{{category.name}}</h6>
+				{%endfor%}
+  		<h4><a href="{{ 'news/news-detail' | page({ slug: posts[0].slug }) }}">{{posts[0].title}}</a></h4>
+      <ul>
+      	<li><i class="far fa-clock"></i><span>{{ "Posted on :date"|_({date: post[0].published_at|date('y:m:d')})}}</span></li>
+      </ul>
+		</div>
+	</div>
+	<ul class='news-block-list row'>
+		<li class='news-block-item col-6'>
+			<div class="news-block-item-img">
+					<a href="{{ 'news/news-detail' | page({ slug: posts[1].slug }) }}">
+						{% if posts[1].featured_images is empty %}
+							<img 
+								src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+								alt="UZBF">
+
+
+							{% else %}
+							{% for image in posts[1].featured_images|slice(0,1) %}
+								<img 
+										data-src="{{ image.filename }}"
+										src="{{ image.path }}"
+										alt="{{ image.description }}"> 
+					    {% endfor %}							
+						{% endif %}
+				</a>
+			</div>
+			<div class="news-block-item-category">
+				<a href="#">
+					{%for category in  posts[1].categories if category.slug != "glavnaya" %}
+						<h6>{{category.name}}</h6>
+					{%endfor%}
+				</a>
+			</div>
+			<div class="news-block-item-headline">
+				<h6><a href="{{ 'news/news-detail' | page({ slug: posts[1].slug }) }}">{{posts[1].title}}</a></h6>
+			</div>
+			<ul class="news-block-item-props desc">
+      	<li>
+     <i class="far fa-clock"></i>
+     <span>{{ " Posted on :date"|_({date: posts[1].published_at|date('y:m:d')})}}
+				</span>
+     
+     </li>
+			</ul>
+		</li>
+		<li class='news-block-item col-6'>
+			<div class="news-block-item-img">
+					<a href="{{ 'news/news-detail' | page({ slug: posts[2].slug }) }}">
+						{% if posts[2].featured_images is empty %}
+							<img 
+								src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+								alt="UZBF">
+							{% else %}
+							{% for image in posts[2].featured_images|slice(0,1) %}
+								<img 
+										data-src="{{ image.filename }}"
+										src="{{ image.path }}"
+										alt="{{ image.description }}"> 
+					    {% endfor %}							
+						{% endif %}
+				</a>
+			</div>
+			<div class="news-block-item-category">
+				<a href="#">
+					{%for category in  posts[2].categories if category.slug != "glavnaya" %}
+						<h6>{{category.name}}</h6>
+					{%endfor%}
+				</a>
+			</div>
+			<div class="news-block-item-headline">
+				<h6><a href="{{ 'news/news-detail' | page({ slug: posts[2].slug }) }}">{{posts[2].title}}</a></h6>
+			</div>
+			<ul class="news-block-item-props desc">
+      	<li>
+			     <i class="far fa-clock"></i>
+			     <span>{{ " Posted on :date"|_({date: posts[2].published_at|date('y:m:d')})}}
+							</span>
+			     
+			     </li>
+			</ul>
+		</li>
+	</ul>
+</div>

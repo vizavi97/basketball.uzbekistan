@@ -1,0 +1,37 @@
+columns:
+    id:
+        label: id
+        type: number
+    match_date:
+        label: match_date
+        type: text
+    game_score:
+        label: game_score
+        type: text
+    tour:
+        label: tour
+        type: number
+    is_finisher:
+        label: is_finisher
+        type: text
+    match_number:
+        label: match_number
+        type: number
+    description:
+        label: description
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    'team_home[name]':
+        label: 'Команда 1'
+        type: text
+    'team_versus[name]':
+        label: 'Команда 2'
+        type: text
+    'tournament[title]':
+        label: Турнир
+        type: text

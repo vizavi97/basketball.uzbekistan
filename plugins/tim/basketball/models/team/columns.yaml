@@ -4,10 +4,6 @@ columns:
         type: text
         searchable: true
         sortable: true
-    address:
-        label: 'tim.basketball::lang.team.address'
-        type: text
-        sortable: true
     id:
         label: id
         type: number

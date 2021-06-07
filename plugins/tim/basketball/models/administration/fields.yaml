@@ -13,7 +13,7 @@ fields:
         type: text
     preview_img:
         label: 'tim.basketball::lang.administration.preview_img'
-        mode: file
+        mode: image
         useCaption: true
         thumbOptions:
             mode: crop
@@ -22,11 +22,18 @@ fields:
         required: 1
         type: fileupload
     category:
-        label: category
-        nameFrom: categories_name
-        descriptionFrom: description
+        label: Категории
+        options:
+            main: Администрация
+            referees: Судьи
+            region: Региональная
         span: auto
-        type: relation
+        required: 1
+        type: radio
+    number:
+        label: Порядок
+        span: auto
+        type: number
 tabs:
     fields:
         text:
@@ -34,14 +41,4 @@ tabs:
             size: ''
             span: full
             type: richeditor
-            tab: 'Tab 1'
-        detail_img:
-            label: 'tim.basketball::lang.administration.detail_img'
-            span: auto
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            type: fileupload
             tab: 'Tab 1'

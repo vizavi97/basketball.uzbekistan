@@ -1,0 +1,10 @@
+name: Players
+form: $/tim/basketball/models/player/fields.yaml
+modelClass: Tim\Basketball\Models\Player
+defaultRedirect: tim/basketball/players
+create:
+    redirect: 'tim/basketball/players/update/:id'
+    redirectClose: tim/basketball/players
+update:
+    redirect: tim/basketball/players
+    redirectClose: tim/basketball/players

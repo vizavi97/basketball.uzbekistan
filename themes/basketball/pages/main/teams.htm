@@ -1,0 +1,145 @@
+title = "Команды"
+url = "/teams"
+layout = "main"
+is_hidden = 0
+==
+<?php
+use Tim\Basketball\Models\Team;
+
+function onStart() {
+	$this['man5'] = Team::where('gender', 'men')->where('type', '5x5')->get();
+	$this['man3'] = Team::where('gender', 'men')->where('type', '3x3')->get();
+	$this['women5'] = Team::where('gender', 'women')->where('type', '5x5')->get();
+	$this['women3'] = Team::where('gender', 'women')->where('type', '3x3')->get();
+
+}
+?>
+==
+<section class='teams'>
+	<div class='container'>
+		<nav class='teams-nav'>
+		  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+		    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">5x5</a>
+		    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">3x3</a>
+		  </div>
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+		  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class='teams-headline headline'>
+							<h4>Мужские команды</h4>
+						</div>
+						<div class='teams-container'>
+							<div class="row w-100">
+								{%for item in man5 %}
+									<div class='col-md-6'>
+										<div class='team-item row'>
+											<div class='col-md-6 col-5'>
+												<div class='team-item-logo'>
+													{% if item.img is defined and item.img is not empty %}
+														<img src="{{item.img.getPath()}}" alt="{{item.name}}">
+													{% else %}
+														<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+													{% endif %}
+												</div>							
+											</div>
+											<div class='col-md-6 col-7'>
+													<div class='team-item-info'>
+														<h3><a href="{{ 'teams/teams-detail'|page({ slug: item.slug }) }}">{{item.name}}</a></h3>
+														{{item.short_desc|raw}}
+												</div>
+											</div>
+										</div>
+									</div>
+								{%endfor%}
+							</div>
+						</div>
+						<div class='teams-headline headline'>
+							<h4>Женские команды</h4>
+						</div>
+						<div class='teams-container'>
+							<div class="row w-100">
+								{%for item in women5 %}
+									<div class='col-md-6'>
+										<div class='team-item row'>
+											<div class='col-md-6 col-5'>
+												<div class='team-item-logo'>
+													{% if item.img is defined and item.img is not empty %}
+														<img src="{{item.img.getPath()}}" alt="{{item.name}}">
+													{% else %}
+														<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+													{% endif %}
+												</div>							
+											</div>
+											<div class='col-md-6 col-7'>
+													<div class='team-item-info'>
+														<h3><a href="{{ 'teams/teams-detail'|page({ slug: item.slug }) }}">{{item.name}}</a></h3>
+														{{item.short_desc|raw}}
+												</div>
+											</div>
+										</div>
+									</div>
+								{%endfor%}
+							</div>
+						</div>
+		  </div>
+		  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+						<div class='teams-headline headline'>
+							<h4>Мужские команды</h4>
+						</div>
+						<div class='teams-container'>
+							<div class="row w-100">
+								{%for item in man3 %}
+									<div class='col-md-6'>
+										<div class='team-item row'>
+											<div class='col-md-6 col-5'>
+												<div class='team-item-logo'>
+													{% if item.img is defined and item.img is not empty %}
+														<img src="{{item.img.getPath()}}" alt="{{item.name}}">
+													{% else %}
+														<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+													{% endif %}
+												</div>							
+											</div>
+											<div class='col-md-6 col-7'>
+													<div class='team-item-info'>
+														<h3><a href="{{ 'teams/teams-detail'|page({ slug: item.slug }) }}">{{item.name}}</a></h3>
+														{{item.short_desc|raw}}
+												</div>
+											</div>
+										</div>
+									</div>
+								{%endfor%}
+							</div>
+						</div>
+						<div class='teams-headline headline'>
+							<h4>Женские команды</h4>
+						</div>
+						<div class='teams-container'>
+							<div class="row w-100">
+								{%for item in women3 %}
+									<div class='col-md-6'>
+										<div class='team-item row'>
+											<div class='col-md-6 col-5'>
+												<div class='team-item-logo'>
+													{% if item.img is defined and item.img is not empty %}
+														<img src="{{item.img.getPath()}}" alt="{{item.name}}">
+													{% else %}
+														<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+													{% endif %}
+												</div>							
+											</div>
+											<div class='col-md-6 col-7'>
+													<div class='team-item-info'>
+														<h3><a href="{{ 'teams/teams-detail'|page({ slug: item.slug }) }}">{{item.name}}</a></h3>
+														{{item.short_desc|raw}}
+												</div>
+											</div>
+										</div>
+									</div>
+								{%endfor%}
+							</div>
+						</div>
+		  </div>
+		</div>
+	</div>
+</section>

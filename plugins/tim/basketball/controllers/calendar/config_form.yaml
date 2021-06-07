@@ -1,0 +1,10 @@
+name: Calendar
+form: $/tim/basketball/models/calendar/fields.yaml
+modelClass: Tim\Basketball\Models\Calendar
+defaultRedirect: tim/basketball/calendar
+create:
+    redirect: 'tim/basketball/calendar/update/:id'
+    redirectClose: tim/basketball/calendar
+update:
+    redirect: tim/basketball/calendar
+    redirectClose: tim/basketball/calendar

@@ -1,0 +1,68 @@
+title = "Детальная страница команды"
+url = "/teams/:slug"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Basketball\Models\Team;
+use Tim\Basketball\Models\Player;
+use Tim\Basketball\Models\PlayersTeam;
+
+
+function onStart() {
+	$this['team'] = Team::where('slug', $this->param('slug'))->first();
+	$players_ids = PlayersTeam::where('team_id',$this['team']->id)->get()->pluck('player_id')->toArray();
+	$this['players'] = Player::whereIn('id', $players_ids)->get();
+  $this->layout->components['SeoCmsPage']->seo_title = $this['team']->name;
+}
+?>
+==
+<div class='teams-profile'>
+	<div class='container'>
+		<div class='teams-profile-info'>
+			<div class="row">
+				<div class="col-md-4">
+					<div class='teams-profile-logo'>
+						{% if team.img is defined and team.img is not empty %}
+							<img src="{{team.img.getPath()}}" alt="{{team.name}}">
+						{% else %}
+							<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+						{% endif %}
+					</div>				
+				</div>
+				<div class="col-md-8">
+					<div class='teams-profile-description'>
+						<h1>{{team.name}}</h1>
+						{{team.description|raw}}
+					</div>			
+				</div>
+			</div>		
+		</div>
+		
+		<h2 class='text-center'>{{"Состав Команды"}}</h2>
+		<div class='teams-players'>
+			<div class="row">
+				{%for player in players if player.is_publish%}
+					<div class="col-md-3">
+					<div class="teams-player-card">
+						<div class="teams-player-card-img">
+							{% if player.preview_img is defined and player.preview_img is not empty %}
+								<img src="{{player.preview_img.getPath()}}" alt="{{player.preview_img.name}}">
+							{% else %}
+								<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+							{% endif %}
+							</div>
+						<div class="teams-player-card-name">
+							<h4>{{player.surname ~ " " ~ player.name ~ " " ~ player.father_name}}</h4>
+							<h6>{{"Игровой номер: "|_}}{{player.number}}</h6>
+							<h6><small>{{player.position}}</small></h6>
+						</div>
+					</div>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+	</div>
+</div>

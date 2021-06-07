@@ -1,0 +1,16 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: 'Полное название'
+        type: text
+    short_title:
+        label: Аббревиатура
+        type: text
+    created_at:
+        label: 'Время создания'
+        type: datetime
+    updated_at:
+        label: 'Время изменения'
+        type: datetime

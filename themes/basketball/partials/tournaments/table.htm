@@ -1,0 +1,49 @@
+[viewBag]
+==
+<table width="100%" border="0" class="table table-centered table-hover table-sportcms">
+	<thead>
+	<tr>
+		<th width="40"><div class="w30 text-center">#</div></th>
+		<th colspan="2" class="text-left">Регулярный чемпионат</th>
+		<th width="60"><div class="w50 text-center" data-rel="tooltip" title="" data-original-title="Игры">И<div></div></div></th>
+		<th width="60"><div class="w50 text-center" data-rel="tooltip" title="" data-original-title="Выигрыши">В</div></th>
+		<th width="70"><div class="w50 text-center" data-rel="tooltip" title="" data-original-title="Поражения">П</div></th>
+		<th width="70"><div class="w60 text-center" data-rel="tooltip" title="" data-original-title="Очки">О</div></th>
+		<th width="70"><div class="w60 text-center" data-rel="tooltip" title="" data-original-title="Процент">%</div></th>
+		
+		<th width="100"><div class="w90 text-center"><span data-rel="tooltip" title="" data-original-title="Очки забитые">ОЗ</span>/<span data-rel="tooltip" title="" data-original-title="Очки пропущенные">ОП</span></div></th>
+		<th width="100"><div class="w90 text-center"><span data-rel="tooltip" title="" data-original-title="Очки забитые в среднем">ОЗСР</span>/<span data-rel="tooltip" title="" data-original-title="Очки пропущенные в среднем">ОПСР</span></div></th>
+		<th width="70"><div class="w60 text-center" data-rel="tooltip" title="" data-original-title="Тяжелые игры">ТИ<br><span data-rel="tooltip" title="" data-original-title="Выигрыши">В</span>/<span data-rel="tooltip" title="" data-original-title="Поражения">П</span></div></th>
+		<th width="70"><div class="w60 text-center">Серия<br><span data-rel="tooltip" title="" data-original-title="Выигрыши">В</span>/<span data-rel="tooltip" title="" data-original-title="Поражения">П</span></div></th>
+		<th width="70"><div class="w60 text-center" data-rel="tooltip" title="" data-original-title="Последние 5 матчей">П-5<br><span data-rel="tooltip" title="" data-original-title="Выигрыши">В</span>/<span data-rel="tooltip" title="" data-original-title="Поражения">П</span></div>
+		</th>
+	</tr>
+</thead>
+	<tbody>
+		{%for team in teams%}
+		<tr class="">
+			<td class="text-center">1</td>
+			<td class="border-right" width="120">
+				{% if team.img is defined and team.img is not empty %}
+					<img src="{{team.img.getPath()}}" alt="{{team.name}}" w='40' h='40'>
+				{% else %}
+					<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" w='40' h='40' alt="staff">
+				{% endif %}
+			</td>
+			<td class="nowrap teamcity"><span class="team" title="Барс">
+				<a href="//nbf.kz/team/?category_tournament=roster&amp;season=16&amp;team=30" title="Барс">{{team.name}}</a>
+				</td>
+			<td class="text-center">24</td>
+			<td class="text-center">21</td>
+			<td class="text-center">3</td>
+			<td class="text-center"><span data-rel="tooltip" title="" data-original-title="45+0">45</span></td>
+			<td class="text-center">87.5</td>
+			<td class="text-center"><div style="padding-bottom: 7px;" data-rel="tooltip" title="" data-original-title="1.297">1919/1479</div><div><span class="green">+440</span></div></td>
+			<td class="text-center"><div style="padding-bottom: 7px;"><span data-rel="tooltip" title="" data-original-title="1919/24=80">80</span>/<span data-rel="tooltip" title="" data-original-title="1479/24=61.6">61.6</span></div><div><span class="green">+18.4</span></div></td>
+			<td class="text-center">1/1</td>
+			<td class="text-center">16/1</td>
+			<td class="text-center">4/1<br><span class="last green"></span><span class="last green"></span><span class="last green"></span><span class="last green"></span><span class="last red"></span></td>
+		</tr>
+		{%endfor%}
+	</tbody>
+</table>

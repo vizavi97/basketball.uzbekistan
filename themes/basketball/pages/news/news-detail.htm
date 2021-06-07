@@ -1,0 +1,94 @@
+title = "Новости детальная"
+url = "/news/detail/:slug"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "index"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news/news-detail"
+postPage = "news/news-detail"
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+public function onEnd() {
+    $post = $this['blogPost'] ? $this['blogPost']->post : null;
+    if (!$post) {
+        return Redirect::to('/404');
+    };   
+    //$this->page->title = $post->title;
+    //$this->page->meta_title = $post->title;
+}
+?>
+==
+{% set thisPost = blogPost.post %}
+<section class='news'>
+	<div class='container'>
+		<div class='news-container row'>
+			<div class="col-lg-9">
+				<div class='news-detail'>
+					<div class='news-detail-preview'>
+							{% if thisPost.featured_images.count %}
+						    <div class="featured-images text-center">
+											<div class="owl-carousel owl-theme main-banner">
+									        {% for image in thisPost.featured_images %}
+										                <img
+										                    data-src="{{ image.filename }}"
+										                    src="{{ image.path }}"
+										                    alt="{{ image.description }}"
+										                    style="max-width: 100%" />
+									        {% endfor %}
+												</div>
+								{% else %}
+								<img 
+										src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+										alt="UZBF">
+								{% endif %}
+						</div>
+						<div class='news-detail-content'>
+<!-- 						<p class="info">
+    <strong>
+        Posted
+        {% if thisPost.categories.count %} in
+            {% for category in thisPost.categories %}
+                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+        on {{ thisPost.published_at|date('Y-m-d') }}
+    </strong>
+</p> -->
+						<div class="content">{{ thisPost.content_html|raw }}</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="col-lg-3">
+				{% partial 'news/news-side' slug=thisPost.slug %}
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

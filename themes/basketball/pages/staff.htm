@@ -1,0 +1,43 @@
+title = "Федерация"
+url = "/staff"
+layout = "main"
+is_hidden = 0
+==
+<?php
+use Tim\Basketball\Models\Administration;
+
+function onStart() {
+	$this['administration'] = Administration::where('category', 'main')->get();
+}
+?>
+==
+<section class='staff'>
+	<div class='container'>
+		<div class='staff-container'>
+			<div class='staff-group'>
+				<div class='staff-headline headline'>
+						<h2>Администрация</h2>
+				</div>
+				<ul class='staff-list'>
+					{% for adm in administration %}
+					<li class='staff-item col-lg-2'>
+						<div class='staff-item-image'>
+							{% if adm.preview_img is defined and adm.preview_img is not empty %}
+								<img src="{{adm.preview_img.getPath()}}" alt="{{adm.name ~ " " ~  adm.surname}}">
+							{% else %}
+								<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+							{% endif %}
+						</div>
+						<div class='staff-item-info'>
+							<h5>{{adm.name}}</h5>
+							<h4>{{adm.surname}}</h4>
+							<h6>{{adm.position}}</h6>
+						</div>
+					</li>
+					{% endfor %}
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

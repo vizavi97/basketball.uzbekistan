@@ -1,0 +1,70 @@
+description = "Слайдер для сборных"
+
+[viewBag]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "sbornye"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news/news-detail"
+postPage = "news/news-detail"
+==
+<div class='owl-carousel owl-theme national-news-slider'>
+	{% for post in posts %}
+		<div class="news-item">
+		  	<div class='main-banner-img'>
+				{% if post.featured_images is empty %}
+		  			<img src="{{'assets/images/slideshow/444.jpg' | theme}}" alt="slider">
+						{% else %}
+						{% for image in post.featured_images|slice(0,1) %}
+							<img 
+									data-src="{{ image.filename }}"
+									src="{{ image.path }}"
+									alt="{{ image.description }}"> 
+				    {% endfor %}							
+					{% endif %}
+		  </div>
+		  	<div class='main-banner-content'>
+		  		
+					{% if not category %}
+						<h6>Category not found</h6>
+					{% else %}
+						<h6>{{category.name}}</h6>
+					{%endif%}
+		  		<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
+		      <ul>
+		      	<li>
+		      		<i class="far fa-clock"></i>           
+		      		<span>{{ "Posted on :date"|_({date: post.published_at|date('y:m:d')})}}</span>
+						</li>
+		      </ul>
+			 </div>
+		</div>
+	{%endfor%}
+</div>
+
+
+{% put styles %}
+
+{% endput %}
+<link rel="stylesheet"
+      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+<style> 
+
+	.national-news-slider .main-banner-img {
+		width: 100%;
+	}
+	.national-news-slider .main-banner-content {
+		padding: 0 5rem;
+	}
+</style>
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

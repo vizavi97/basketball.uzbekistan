@@ -1,0 +1,37 @@
+[viewBag]
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart() {
+	$this['sidePost'] =  Post::where('slug','!=',$this->slug)->orderBy('published_at', 'desc')->take(5)->get();
+}
+?>
+==
+<div class='news-side headline'>
+					<h5>Свежие Новости {{slug}}</h5>
+				</div>
+				<ul class='news-side-list'>
+					{% for post in sidePost%}
+						<li class='news-side-item'>
+							<div class='news-side-item-img'>
+								{% if post.featured_images is empty %}
+									<img 
+										src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+											alt="UZBF">
+								{% else %}
+								{% for image in post.featured_images|slice(0,1) %}
+									<img 
+											data-src="{{ image.filename }}"
+											src="{{ image.path }}"
+											alt="{{ image.description }}"> 
+	              {% endfor %}							
+							{% endif %}
+							</div>
+							<div class='news-side-item-info'>
+								<h5><a href="{{ 'news/news-detail' | page({ slug: posts[2].slug }) }}">{{post.title}}</a></h5>
+								<p><small>{{ "Posted on"|_}} {{post.published_at|date('Y-m-d')}}</small></p>
+						</div>
+						</li>
+					{% endfor %}
+				</ul>

@@ -1,0 +1,10 @@
+name: Events
+form: $/tim/basketball/models/event/fields.yaml
+modelClass: Tim\Basketball\Models\Event
+defaultRedirect: tim/basketball/events
+create:
+    redirect: 'tim/basketball/events/update/:id'
+    redirectClose: tim/basketball/events
+update:
+    redirect: tim/basketball/events
+    redirectClose: tim/basketball/events

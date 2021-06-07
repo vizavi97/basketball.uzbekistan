@@ -1,3 +1,9 @@
+/* COlors */
+
+:root {
+  --red: #e10a30;
+}
+
 a {
     color: #555;
 }
@@ -77,3 +83,23 @@ ul.desc li i {
     height: .125rem;
     background-color: #e10a30;
 }
+
+.language li {
+	padding: .5rem .25rem;
+}
+
+.language li.active a  {
+	color: var(--red) ;
+}
+
+
+.language .dropdown-menu {
+	min-width: 7rem;
+	padding: 0;
+}
+.language button.btn {
+	min-width: 7rem;
+	text-align: left;
+}
+
+

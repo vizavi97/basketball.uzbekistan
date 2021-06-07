@@ -1,0 +1,84 @@
+title = "Новости"
+url = "/news/:page"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
+sortOrder = "published_at desc"
+categoryPage = "news/news-detail"
+postPage = "news/news-detail"
+==
+<section class='news'>
+	<div class='container'>
+		<div class='news-container row'>
+			<div class="col-lg-9">
+				<ul class='news-list'>
+					{% for post in posts %}
+						{%if post.published%}
+							<li class='news-item'>
+								<div class='news-item-img'>
+									{% if post.featured_images is empty %}
+											<img 
+												src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
+													alt="UZBF">
+									{% else %}
+										{% for image in post.featured_images|slice(0,1) %}
+											<img 
+													data-src="{{ image.filename }}"
+													src="{{ image.path }}"
+													alt="{{ image.description }}"> 
+			              {% endfor %}							
+									{% endif %}
+						</div>
+								<div class='news-item-info'>
+									<h5><a href="{{ post.url }}">{{post.title}}</a></h5>
+									<p><small>{{ "Posted on"|_}} {{post.published_at|date('Y-m-d')}}</small></p>
+		 						 	<!-- <p>{{post.summary|truncate(75, true, "...")|raw}}</p> -->
+								 	
+					        <a href="{{ post.url}}" class="text-danger">{{ "продолжить чтение..."|_}}</a>
+						</div>
+							</li>
+						{%endif%}
+					{% endfor %}
+				</ul>
+		    {% if posts.lastPage > 1 %}
+			   	 <div class="news-pagination">
+				      <nav aria-label="Search results pages">
+				        <ul class="news-pagination-page">
+				        {% if posts.currentPage > 1 %}
+				            <li class='news-pagination-page-item'>
+				            	<a 
+						            class="news-pagination-page-link" 
+				            		href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr;</a></li>
+				        {% endif %}
+				        
+				        {% for page in 1..posts.lastPage %}
+				            <li class="news-pagination-page-item {{ posts.currentPage == page ? 'active' : null }}">
+				                <a 
+				                		class="news-pagination-page-link"
+				                		href="{{ this.page.baseFileName|page({ (pageParam): page }) }}"
+				              			style="z-index: 0;">{{ page }}</a>
+				            </li>
+				        {% endfor %}
+				        {% if posts.lastPage > posts.currentPage %}
+				            <li classs='news-pagination-page-item'>
+				            	<a 
+				            		class="news-pagination-page-link"
+				            		href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+				        {% endif %}
+				        </ul>
+				      </nav>
+				  </div>
+				{% endif %}
+			</div>
+			<div class="col-lg-3">
+				{% partial 'news/news-side' %}
+			</div>
+		</div>
+	</div>
+</section>
