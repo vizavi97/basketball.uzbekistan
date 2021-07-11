@@ -1,0 +1,19 @@
+[viewBag]
+==
+<div class="national-nav">
+	<ul class='national-nav-list'>
+		<li>
+			<a href="{{"national/main"|page}}" class='{{this.page.id == "national-main" ? "active" : null}}'>{{"Всё"|_}}</a>
+		</li>
+		<li>
+			<a href="{{"national/news"|page}}" class='{{this.page.id == "national-news" ? "active" : null}}'>{{"Новости"|_}}</a>
+		</li>
+		{%for team in teams %}
+			<li>
+				<a href="{{ 'national/team'|page({ team: team.slug }) }}" class='{{thisTeam.slug == team.slug ? "active" : null}}'>
+				{{team.short_title|_}}
+				</a>
+			</li>
+		{%endfor%}
+	</ul>
+</div>

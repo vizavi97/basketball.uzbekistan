@@ -2,40 +2,756 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7f14195-9680-4b82-9fe2-e68a58324237" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/LICENCE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/Plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/UPGRADE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/assets/images/no-user-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/assets/images/user-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/assets/js/bulk-actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/classes/AuthManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/classes/AuthMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/classes/UserEventBase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/classes/UserRedirector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/Account.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/ResetPassword.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/Session.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/activation_check.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/deactivate_link.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/default.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/register.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/signin.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/account/update.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/resetpassword/complete.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/resetpassword/default.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/resetpassword/reset.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/components/resetpassword/restore.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/UserGroups.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/Users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/_list_toolbar.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/config_form.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/config_list.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/create.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/preview.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/usergroups/update.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_convert_guest_form.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_hint_activate.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_hint_banned.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_hint_guest.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_hint_trashed.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_list_toolbar.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_preview_scoreboard.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/_preview_toolbar.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/config_filter.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/config_form.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/config_list.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/create.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/preview.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/controllers/users/update.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/facades/Auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/cs/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/de/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/en/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/es-ar/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/es/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/fa/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/fr/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/hu/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/id/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/it/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/kr/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/nl/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/pl/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/pt-br/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/pt-pt/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/ru/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/sk/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/sl/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/sv/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/tr/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/zh-cn/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/lang/zh-tw/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/MailBlocker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/Settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/Throttle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/UserGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/settings/fields.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/user/columns.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/user/fields.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/usergroup/columns.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/models/usergroup/fields.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/notifyrules/UserActivatedEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/notifyrules/UserAttributeCondition.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/notifyrules/UserRegisteredEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/notifyrules/userattributecondition/attributes.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/tests/UserPluginTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/tests/unit/facades/AuthFacadeTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/create_mail_blockers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/create_throttle_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/create_user_groups_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/create_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/seed_user_groups_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/update_timestamp_nullable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_deleted_at.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_guest_flag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_ip_address.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_last_seen.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_login_column.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_superuser_flag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_add_surname.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/users_rename_login_to_username.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/updates/version.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/autoload_real.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/autoload_static.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/phpstan.neon.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/AglInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/AimeosInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/AnnotateCmsInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/AsgardInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/AttogramInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/BaseInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/BitrixInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/BonefishInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CakePHPInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ChefInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CiviCrmInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ClanCatsFrameworkInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CockpitInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CodeIgniterInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/Concrete5Installer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CraftInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/CroogoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/DecibelInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/DframeInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/DokuWikiInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/DolibarrInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/DrupalInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ElggInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/EliasisInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ExpressionEngineInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/EzPlatformInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/FuelInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/FuelphpInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/GravInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/HuradInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ImageCMSInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/Installer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ItopInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/JoomlaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/KanboardInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/KirbyInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/KnownInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/KodiCMSInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/KohanaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/LanManagementSystemInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/LaravelInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/LavaLiteInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/LithiumInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MODULEWorkInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MODXEvoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MagentoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MajimaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MakoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MantisBTInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MauticInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MayaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MediaWikiInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MiaoxingInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MicroweberInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ModxInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/MoodleInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/OctoberInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/OntoWikiInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/OsclassInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/OxidInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PPIInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PhiftyInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PhpBBInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PimcoreInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PiwikInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PlentymarketsInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/Plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PortoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PrestashopInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ProcessWireInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PuppetInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/PxcmsInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/RadPHPInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ReIndexInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/Redaxo5Installer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/RedaxoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/RoundcubeInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/SMFInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ShopwareInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/SilverStripeInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/SiteDirectInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/StarbugInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/SyDESInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/SyliusInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/Symfony1Installer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TYPO3CmsInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TYPO3FlowInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TaoInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TastyIgniterInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TheliaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/TuskInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/UserFrostingInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/VanillaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/VgmcpInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/WHMCSInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/WinterInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/WolfCMSInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/WordPressInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/YawikInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ZendInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/Composer/Installers/ZikulaInstaller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/src/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/AsgardInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/BitrixInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/CakePHPInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/CiviCrmInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/CraftInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/DokuWikiInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/GravInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/InstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/MayaInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/MediaWikiInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/OctoberInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/OntoWikiInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/PimcoreInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/PiwikInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/PolyfillTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/ProcessWireInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/SiteDirectInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/SyDESInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/TastyIgniterInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/VgmcpInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/WinterInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/vendor/composer/installers/tests/Composer/Installers/Test/YawikInstallerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/activate.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/invite.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/new_user.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/reactivate.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/restore.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/rainlab/user/views/mail/welcome.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/Coaches.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/_list_toolbar.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/config_form.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/config_list.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/create.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/preview.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/controllers/coaches/update.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/Coach.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/coach/columns.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/coach/fields.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/updates/builder_table_create_tim_basketball_coaches.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/updates/builder_table_create_tim_basketball_coaches_teams.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/tim/basketball/updates/builder_table_update_tim_basketball_matches_8.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/Plugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/classes/JWTAuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/config/auth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/lang/en/lang.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/models/Settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/models/settings/fields.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/plugin.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/updates/version.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/bin/upgrade-carbon" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_files.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_real.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/autoload_static.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/composer/installed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/src/UpdateHelper/ComposerPlugin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/src/UpdateHelper/NotUpdateInterfaceInstanceException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/kylekatarnls/update-helper/src/UpdateHelper/UpdateHelperInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Base64/Base64Encoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Base64/Base64UrlSafeEncoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Base64/Encoder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/JWS.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/JWT.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ECDSA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES256.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES384.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES512.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HMAC.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS256.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS384.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS512.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/None.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/PublicKey.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS256.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS384.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS512.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RSA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SecLib/PublicKey.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS256.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS384.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS512.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RSA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/Signer/SignerInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/src/Namshi/JOSE/SimpleJWS.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/BCJWSTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/JWSTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/JWTTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/ES256Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/ES384Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/ES512Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/HS256Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/HS384Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/HS512Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/KeyFormatTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/NoneTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/RS256Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/RS384Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/OpenSSL/RS512Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/SecLib/RS256TEST.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/SecLib/RS384Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/SecLib/RS512Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/Signer/SecLib/SecLibTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/Namshi/JOSE/Test/SimpleJWSTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/private-ne.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/private.es256.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/private.es384.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/private.es512.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/private.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/public-ne.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/public.es256.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/public.es384.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/public.es512.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/namshi/jose/tests/public.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/bin/upgrade-carbon" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/bin/upgrade-carbon.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Carbon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/CarbonInterval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/CarbonPeriod.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/af.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ar.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ar_Shakl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/az.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/bg.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/bn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/bs_BA.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ca.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/cs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/cy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/da.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/de.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/dv_MV.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/el.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/en.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/eo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/es.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/et.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/eu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/fa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/fi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/fo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/fr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/gl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/gu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/he.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/hi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/hr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/hu.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/hy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/id.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/is.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/it.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ja.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ka.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/kk.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/km.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ko.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/lt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/lv.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/mk.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/mn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/my.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ne.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/nl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/no.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/oc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/pl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ps.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/pt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/pt_BR.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ro.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ru.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sk.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sr_Cyrl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sr_Cyrl_ME.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sr_Latn_ME.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sr_ME.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sv.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/sw.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/th.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/tr.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/uk.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/ur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/uz.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/vi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/zh.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Lang/zh_TW.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Translator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/Carbon/Upgrade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/nesbot/carbon/src/JsonSerializable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/Mbstring.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-mbstring/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-php56/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-php56/Php56.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-php56/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-php56/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-php56/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/Binary.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/BinaryNoFuncOverload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/BinaryOnFuncOverload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/TestListener.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/TestListenerForV5.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/TestListenerForV6.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/TestListenerForV7.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/TestListenerTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/polyfill-util/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/LocaleAwareInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/Test/TranslatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/TranslatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/TranslatorTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation-contracts/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Catalogue/AbstractOperation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Catalogue/MergeOperation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Catalogue/OperationInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Catalogue/TargetOperation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Command/XliffLintCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DataCollector/TranslationDataCollector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DataCollectorTranslator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DependencyInjection/TranslationDumperPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DependencyInjection/TranslationExtractorPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DependencyInjection/TranslatorPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/DependencyInjection/TranslatorPathsPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/CsvFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/DumperInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/FileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/IcuResFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/IniFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/JsonFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/MoFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/PhpFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/PoFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/QtFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/XliffFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Dumper/YamlFileDumper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/ExceptionInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/InvalidArgumentException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/InvalidResourceException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/LogicException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/NotFoundResourceException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Exception/RuntimeException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Extractor/AbstractFileExtractor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Extractor/ChainExtractor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Extractor/ExtractorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Extractor/PhpExtractor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Extractor/PhpStringTokenParser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Formatter/ChoiceMessageFormatterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Formatter/IntlFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Formatter/IntlFormatterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Formatter/MessageFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Formatter/MessageFormatterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/IdentityTranslator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Interval.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/ArrayLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/CsvFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/FileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/IcuDatFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/IcuResFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/IniFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/JsonFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/LoaderInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/MoFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/PhpFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/PoFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/QtFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/XliffFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Loader/YamlFileLoader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/LoggingTranslator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/MessageCatalogue.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/MessageCatalogueInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/MessageSelector.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/MetadataAwareInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/PluralizationRules.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Reader/TranslationReader.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Reader/TranslationReaderInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Resources/bin/translation-status.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Resources/data/parents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Resources/schemas/xliff-core-1.2-strict.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Resources/schemas/xliff-core-2.0.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Resources/schemas/xml.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Catalogue/AbstractOperationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Catalogue/MergeOperationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Catalogue/TargetOperationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Command/XliffLintCommandTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DataCollector/TranslationDataCollectorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DataCollectorTranslatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/TranslationDumperPassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/TranslationExtractorPassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/TranslationPassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/TranslationPathsPassTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/fixtures/ControllerArguments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/fixtures/ServiceArguments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/fixtures/ServiceMethodCalls.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/fixtures/ServiceProperties.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/DependencyInjection/fixtures/ServiceSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/CsvFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/FileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/IcuResFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/IniFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/JsonFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/MoFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/PhpFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/PoFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/QtFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/XliffFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Dumper/YamlFileDumperTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Extractor/PhpExtractorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Formatter/IntlFormatterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Formatter/MessageFormatterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/IdentityTranslatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/IntervalTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/CsvFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/IcuDatFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/IcuResFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/IniFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/JsonFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/LocalizedTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/MoFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/PhpFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/PoFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/QtFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/XliffFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Loader/YamlFileLoaderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/LoggingTranslatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/MessageCatalogueTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/MessageSelectorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/PluralizationRulesTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/TranslatorCacheTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/TranslatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Util/ArrayConverterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/Writer/TranslationWriterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty-translation.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty-translation.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/empty.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/encoding.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/escaped-id-plurals.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/escaped-id.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/extractor/resource.format.engine" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/extractor/this.is.a.template.format.engine" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/extractor/translation.html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/fuzzy-translations.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/invalid-xml-resources.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/malformed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/messages.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/messages_linear.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/missing-plurals.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/non-valid.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/non-valid.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/plurals.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/plurals.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resname.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/corrupted/resources.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/en.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/en.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/fr.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/fr.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/packagelist.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/dat/resources.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resourcebundle/res/en.res" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-2.0+intl-icu.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-2.0-clean.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-2.0-multi-segment-unit.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-2.0.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-clean.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-multi-files.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-notes-meta.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-target-attributes.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources-tool-info.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.dump.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/resources.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/valid.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/with-attributes.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/withdoctype.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Tests/fixtures/withnote.xlf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Translator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/TranslatorBagInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/TranslatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Util/ArrayConverter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Util/XliffUtils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Writer/TranslationWriter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/Writer/TranslationWriterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/symfony/translation/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Blacklist.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Audience.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Claim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/ClaimInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Custom.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Expiration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Factory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/IssuedAt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Issuer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/JwtId.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/NotBefore.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Claims/Subject.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Commands/JWTGenerateCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/InvalidClaimException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/JWTException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/PayloadException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/TokenBlacklistedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/TokenExpiredException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Exceptions/TokenInvalidException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Facades/JWTAuth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Facades/JWTFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/JWTAuth.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/JWTManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Middleware/BaseMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Middleware/GetUserFromToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Middleware/RefreshToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Payload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/PayloadFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/Auth/AuthInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/Auth/IlluminateAuthAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/JWT/JWTInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/JWT/JWTProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/JWT/NamshiAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/JWTAuthServiceProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/Storage/IlluminateCacheAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/Storage/StorageInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/User/EloquentUserAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Providers/User/UserInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Token.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Utils.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Validators/AbstractValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Validators/PayloadValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Validators/TokenValidator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/Validators/ValidatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/src/config/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/BlacklistTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Commands/JWTGenerateCommandTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/JWTAuthTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/JWTManagerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Middleware/GetUserFromTokenTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/PayloadFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/PayloadTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Providers/Auth/IlluminateAuthAdapterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Providers/JWT/JWTProviderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Providers/JWT/NamshiAdapterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Providers/Storage/IlluminateCacheAdapterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Providers/User/EloquentUserAdapterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Stubs/JWTProviderStub.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/TokenTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Validators/PayloadValidatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/vendor/tymon/jwt-auth/tests/Validators/TokenValidatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugins/vdomah/jwtauth/views/_btn_generate.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/layouts/games.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/pages/games/games-page.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/pages/test/test.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/partials/games/games-carousel.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/partials/games/games-headline.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/partials/games/games-nav.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/themes/basketball/partials/games/games-video.htm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/Administration.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/Administration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/Team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/administration/columns.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/administration/columns.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/administration/fields.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/administration/fields.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/docs/fields.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/docs/fields.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/team/columns.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/team/columns.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/models/team/fields.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/models/team/fields.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/plugin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/plugin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/tim/basketball/updates/version.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/tim/basketball/updates/version.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/assets/css/variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/assets/css/variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/layouts/main.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/layouts/main.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/pages/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/pages/index.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/partials/main/articles.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/partials/main/articles.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/partials/main/main-slider.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/partials/main/main-slider.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/basketball/partials/main/news-block.htm" beforeDir="false" afterPath="$PROJECT_DIR$/themes/basketball/partials/main/news-block.htm" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -55,17 +771,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p9ArJw8WOfMmt4JjMkpB6W90iC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/tim/basketball/controllers/administration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/plugins/vdomah/jwtauth" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -79,18 +805,7 @@
       <recent name="D:\PhpstormProjects\basketball.uzbekistan\themes\basketball" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -121,23 +836,26 @@
       <workItem from="1617638149123" duration="657000" />
       <workItem from="1622397911457" duration="1568000" />
       <workItem from="1622983502343" duration="2617000" />
+      <workItem from="1625934502148" duration="6359000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

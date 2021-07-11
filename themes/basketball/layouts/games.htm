@@ -1,0 +1,94 @@
+==
+<?php
+function onStart() {
+	$this['phoneLink'] = "+998955151881";
+	$this['phone'] = "+998(95) 515-18-81";
+	$this['mail'] = "info@uzbf.uz";
+	$this['cssTimer'] = date('l jS \of F Y h:i:s A');
+}
+?>
+==
+<html>
+<head>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}">
+  <meta charset="utf-8">
+  <meta name="description" content="Федерация баскетбола Узбекистана">
+  <link href="{{'assets/favicon/favicon.png' | theme}}" rel="shortcut icon" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+		      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+		      crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="{{'assets/css/styles.css' | theme}}?{{cssTimer}}"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="{{'assets/css/national.css' | theme}}"
+        crossorigin="anonymous">
+		
+  <title>{{this.page.title}}</title>
+  {% styles %}
+</head>
+<body>
+  <header class="header">
+    <div class="header-top">
+      <div class="header-top-container container">
+        <div class="header-top-logo">
+        	<a href="/">
+						<img src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}" alt="logo">
+      	  </a>
+        </div>
+        <div class="header-top-date">
+          <i class="fas fa-calendar-alt"></i>
+          <time datetime="{{ "now"|date("d/m/Y")}}">{{ "now"|date("d/m/Y") }}</time> 
+        </div>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="container">
+      	{% partial 'site/desktop-menu' %}
+      </div>
+    </div>
+  </header>
+  <aside class="side-bar" id='side-bar'>
+  	{% partial 'site/side-bar' %}
+  </aside>
+  <main class='main-wrapper'>
+    	{% partial 'games/games-headline' %}
+			<section class='national'>
+				<div class='container'>
+					<div class='national-container'>
+							{% page %}
+					</div>
+				</div>
+			</section>
+			<!-- Partners -->
+			{% partial 'main/partners' %}
+  </main>
+	<div class='overlay' id="overlay"></div>
+	<footer class='footer'>
+		{% partial 'site/footer' %}
+	</footer>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"
+        integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw=="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="{{'assets/js/script.js' | theme}}"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+</html>

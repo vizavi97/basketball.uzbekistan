@@ -1,0 +1,155 @@
+title = "Матч Центр"
+url = "/games/:id"
+layout = "games"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Basketball\Models\Match;
+
+function onStart() {
+	$match = Match::where('id',$this->param('id'))->first();
+	$this['match'] =	$match;
+}
+?>
+==
+<section class='games-preview'>
+		<div class="game-item">
+						<div class='game-item-header'>
+								<div class="game-item-tournament">
+									<h3 class='px-4'>{{match.tournament.title}} 
+										<br>Групповой этап
+									</h3>
+								</div>
+						</div>
+						<div class="game-item-container">
+							<div class="game-item-team">
+								{%if match.team_home.img.getPath()%}
+								 <img
+	                    alt="{{match.team_home.name}}"
+	                    src="{{match.team_home.img.getPath()}}"
+	                    />
+                {%else%}
+                <img
+	                    alt="{{match.team_home.name}}"
+	                    src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png' | theme}}"
+	                    />
+                
+                {%endif%}
+							</div>
+							<div class="game-item-score">
+								<div class="game-item-time">
+									<h3>{{match.match_date}}</h3>
+								</div>
+								<div class="game-item-place">
+									<h3>{{match.address}}</h3>
+								</div>
+								<h1>
+											{{match.game_score}}
+								</h1>
+							</div>
+							<div class="game-item-team">
+								{%if match.team_home.img.getPath()%}
+								 <img
+	                    alt="{{match.team_versus.name}}"
+	                    src="{{match.team_versus.img.getPath()}}"
+	                    />
+                {%else%}
+                <img
+	                    alt="{{match.team_versus.name}}"
+	                    src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png' | theme}}"
+	                    />
+                
+                {%endif%}
+							</div>					
+						</div>
+							<h3>{{match.is_finished ? "Матч окончен" : "Live"}}</h3>
+		</div>
+		<div class='games-container px-0'>
+			<ul class="national-nav nav nav-pills national-nav-list mb-3" id="pills-tab" role="tablist">
+				  <li class="nav-item">
+				    <a class="nav-link disable"
+				    		id="pills-anons-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-anons" 
+				    		role="tab" 
+				    		aria-controls="pills-anons" 
+				    		aria-selected="true">
+				    	Анонс</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link disable" 
+				    		id="pills-obzor-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-obzor" 
+				    		role="tab" 
+				    		aria-controls="pills-obzor" 
+				    		aria-selected="true">
+				    					    	Обзор</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" 
+				    		id="pills-photo-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-photo" 
+				    		role="tab" 
+				    		aria-controls="pills-photo" 
+				    		aria-selected="true">
+				    					    	Фото</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link {{match.video_id ? "" : 'disable'}}" 
+				    		id="pills-video-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-video" 
+				    		role="tab" 
+				    		aria-controls="pills-video" 
+				    		aria-selected="true">
+				    					    	Видео</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" 
+				    		id="pills-place-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-place" 
+				    		role="tab" 
+				    		aria-controls="pills-place" 
+				    		aria-selected="true">
+				    					    	Место проведения</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" 
+				    		id="pills-game-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-game" 
+				    		role="tab" 
+				    		aria-controls="pills-game" 
+				    		aria-selected="true">
+				    					    	Ход игры</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link disable" 
+				    		id="pills-statistic-tab" 
+				    		data-toggle="pill" 
+				    		href="#pills-statistic" 
+				    		role="tab" 
+				    		aria-controls="pills-statistic" 
+				    		aria-selected="true">
+				    					    	Статистика</a>
+				  </li>
+				  
+				</ul>
+				<div class="tab-content px-3" id="pills-tabContent">
+				  <div class="tab-pane fade" id="pills-anons" role="tabpanel" aria-labelledby="pills-anons-tab">anons</div>
+				  <div class="tab-pane fade" id="pills-obzor" role="tabpanel" aria-labelledby="pills-obzor-tab">obzor</div>
+				  <div class="tab-pane fade" id="pills-photo" role="tabpanel" aria-labelledby="pills-photo-tab">photo</div>
+				  <div class="tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="pills-video-tab">
+				  	{% partial 'games/games-video' video=match.video_id %}
+				  </div>
+				  <div class="tab-pane fade" id="pills-place" role="tabpanel" aria-labelledby="pills-place-tab">place</div>
+				  <div class="tab-pane fade" id="pills-game" role="tabpanel" aria-labelledby="pills-game-tab">game</div>
+				  <div class="tab-pane fade" id="pills-statistic" role="tabpanel" aria-labelledby="pills-statistic-tab">statistic</div>
+				</div>
+		</div>
+</section>

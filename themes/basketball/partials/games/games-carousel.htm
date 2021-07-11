@@ -1,0 +1,92 @@
+description = "Карусель с матчами"
+
+[viewBag]
+==
+<?php
+use Tim\Basketball\Models\Match;
+
+function onStart() {
+	$matches = Match::orderBy('id', 'desc')->take(5)->get();
+	$this['matches'] = $matches;
+}
+?>
+==
+<div class='games-container mt-3'>
+	<div class='container'>
+		<div class="row">
+			<div class='owl-carousel owl-theme games'>
+				{%for match in matches %}
+					<div class="game-item">
+						<div class='game-item-header'>
+								<div class="game-item-tournament">
+									<span>{{match.tournament.title}} 
+										<br>Групповой этап
+									</span>
+								</div>
+								<div class="game-item-time">
+									<span>{{match.match_date}}</span>
+								</div>
+								<div class="game-item-place">
+									<span>{{match.address}}</span>
+								</div>
+						</div>
+						<div class="game-item-container">
+							<div class="game-item-team">
+								{%if match.team_home.img.getPath()%}
+								 <img
+	                    alt="{{match.team_home.name}}"
+	                    src="{{match.team_home.img.getPath()}}"
+	                    />
+                {%else%}
+                <img
+	                    alt="{{match.team_home.name}}"
+	                    src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png' | theme}}"
+	                    />
+                
+                {%endif%}
+							</div>
+							<div class="game-item-score">
+									<h2>
+										<a href="{{ 'games/games-page'|page({ id: match.id }) }}">
+												{{match.game_score}}
+										</a>
+									</h2>
+							</div>
+							<div class="game-item-team">
+								{%if match.team_home.img.getPath()%}
+								 <img
+	                    alt="{{match.team_versus.name}}"
+	                    src="{{match.team_versus.img.getPath()}}"
+	                    />
+                {%else%}
+                <img
+	                    alt="{{match.team_versus.name}}"
+	                    src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png' | theme}}"
+	                    />
+                
+                {%endif%}
+							</div>					
+						</div>
+						<div  class="game-item-state">
+							<span>{{match.is_finished ? "Матч окончен" : "Live"}}</span>
+						</div>
+					</div>
+				{%endfor%}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% put styles %}
+<link rel="stylesheet"
+      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
+      crossorigin="anonymous">
+{% endput %}
+
+{% put scripts %}
+<script type="text/javascript"
+        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
+<script type="text/javascript"
+        src="{{'assets/js/main.js' | theme}}"></script>
+{% endput %}

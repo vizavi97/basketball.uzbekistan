@@ -1,0 +1,31 @@
+fields:
+    name:
+        label: Имя
+        span: auto
+        type: text
+    surname:
+        label: Фамилия
+        span: auto
+        type: text
+    position:
+        label: 'Роль Тренера'
+        options:
+            main: Главный
+            assistant: Помощник
+        span: auto
+        type: radio
+    team:
+        label: Relation
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    preview_img:
+        label: 'File upload'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload

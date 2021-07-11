@@ -1,0 +1,12 @@
+list: $/tim/basketball/models/coach/columns.yaml
+modelClass: Tim\Basketball\Models\Coach
+title: Coaches
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'tim/basketball/coaches/update/:id'
