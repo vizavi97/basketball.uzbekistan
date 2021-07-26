@@ -5,10 +5,157 @@ is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 ==
-<section class='container'>		
-				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac255fd35c8d249973e01d5bde0016e5da8b1b1eef237dab702750eb0ad8408aa&amp;source=constructor"
-				width="100%" height="503" frameborder="0"></iframe>
-				<div class='basket-section-info'>
-					{% content 'basketball-section-info' %}
-				</div>
+<?php
+use Tim\Basketball\Models\Section;
+
+function onStart() {
+	$all = Section::all();
+	$section = $all->groupBy('region');
+$this['section'] = $section;
+}
+?>
+==
+<section class='container'>
+    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac255fd35c8d249973e01d5bde0016e5da8b1b1eef237dab702750eb0ad8408aa&amp;source=constructor"
+            width="100%" height="503" frameborder="0"></iframe>
+    <div class='basket-section-info mb-3'>
+        {% content 'basketball-section-info' %}
+    </div>
+    <div class="d-flex justify-content-end">
+        <label class="select" for="customSelect">
+
+            <select name="customSelect" id="customSelect">
+                {%for key, value in section %}
+                <option value="{{key|_}}" {{loop.first ?
+                "checked" : null}}> {{key|_}}</option>
+                {% endfor %}
+            </select>
+
+            <svg>
+                <use xlink:href="#select-arrow-down"></use>
+            </svg>
+        </label>
+        <!-- SVG Sprites-->
+        <svg class="sprites">
+            <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                <polyline points="1 1 5 5 9 1"></polyline>
+            </symbol>
+        </svg>
+    </div>
+    <div class="tab-content" id="nav-tabContent">
+        {%for key, s in section %}
+        <div class="tab-pane fade {{loop.first ? " show active
+        " : null}}" name="{{key}}">
+        <div class='teams-headline headline'>
+            <h4>{{key|_}}</h4>
+        </div>
+        <div class='teams-container'>
+            <div class="row w-100">
+                {%for sItem in s %}
+                <div class='col-md-6'>
+                    <div class='team-item row'>
+                        <!-- <div class='col-md-6 col-5'>
+                            <div class='team-item-logo'>
+                                {% if item.img is defined and item.img is not empty %}
+                                    <img src="{{item.img.getPath()}}" alt="{{item.name}}">
+                                {% else %}
+                                    <img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+                                {% endif %}
+                            </div>
+                        </div> -->
+                        <div class='col-md-12 col-7'>
+                            <div class='team-item-info'>
+                                <h3>{{sItem.title}}</h3>
+                                {{sItem.desc|raw}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var inputSelect = document.getElementById("customSelect")
+        var tabs = document.querySelectorAll(".tab-pane")
+
+        inputSelect.addEventListener("change", function (event) {
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("show", "active");
+                if (tabs[i].getAttribute('name') === event.target.value) {
+                    tabs[i].classList.add("show", "active")
+                }
+            }
+        });
+    })
+</script>
+
+<style>
+    .select {
+        position: relative;
+        min-width: 200px;
+    }
+
+    .select svg {
+        position: absolute;
+        right: 12px;
+        top: calc(50% - 3px);
+        width: 10px;
+        height: 6px;
+        stroke-width: 2px;
+        stroke: #9098a9;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        pointer-events: none;
+    }
+
+    .select select {
+        -webkit-appearance: none;
+        padding: 7px 40px 7px 12px;
+        width: 100%;
+        border: 1px solid #e8eaed;
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 1px 3px -2px #9098a9;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        transition: all 150ms ease;
+    }
+
+    .select select:required:invalid {
+        color: #5a667f;
+    }
+
+    .select select option {
+        color: #223254;
+    }
+
+    .select select option[value=""][disabled] {
+        display: none;
+    }
+
+    .select select:focus {
+        outline: none;
+        border-color: #07f;
+        box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+    }
+
+    .select select:hover + svg {
+        stroke: #07f;
+    }
+
+    .sprites {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
+    }
+</style>

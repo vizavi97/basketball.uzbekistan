@@ -1,0 +1,10 @@
+name: Section
+form: $/tim/basketball/models/section/fields.yaml
+modelClass: Tim\Basketball\Models\Section
+defaultRedirect: tim/basketball/section
+create:
+    redirect: 'tim/basketball/section/update/:id'
+    redirectClose: tim/basketball/section
+update:
+    redirect: tim/basketball/section
+    redirectClose: tim/basketball/section
