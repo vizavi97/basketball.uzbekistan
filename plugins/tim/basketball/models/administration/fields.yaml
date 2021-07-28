@@ -25,6 +25,7 @@ fields:
         label: Категории
         options:
             main: Администрация
+            leadership: Руководство
             referees: Судьи
             region: Региональная
         span: auto

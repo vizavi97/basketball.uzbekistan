@@ -3,6 +3,9 @@
 use Tim\Basketball\Models\NationalTeams;
 
 function onStart() {
+	$this['phoneLink'] = "+998955151881";
+	$this['phone'] = "+998(95) 515-18-81";
+	$this['mail'] = "info@uzbf.uz";
 	$this['nTeams'] = NationalTeams::where('slug','!=', 'empty')->get();
 }
 ?>
@@ -44,7 +47,7 @@ function onStart() {
         </div>
         <div class="header-top-date">
           <i class="fas fa-calendar-alt"></i>
-          <time datetime="{{ "now"|date("m/d/Y")}}">{{ "now"|date("m/d/Y") }}</time> 
+          <time datetime="{{ "now"|date("d/m/Y")}}">{{ "now"|date("d/m/Y") }}</time> 
         </div>
       </div>
     </div>

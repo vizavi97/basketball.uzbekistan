@@ -30,6 +30,10 @@ navigation:
                 label: Events
                 url: tim/basketball/events
                 icon: icon-qq
+            side-menu-item6:
+                label: Coaches
+                url: tim/basketball/coaches
+                icon: icon-github
             Docs:
                 label: 'tim.basketball::lang.docs.documents'
                 url: tim/basketball/docs
@@ -46,3 +50,7 @@ navigation:
                 label: National-Teams
                 url: tim/basketball/nationalteams
                 icon: icon-openid
+            side-menu-item7:
+                label: Section
+                url: tim/basketball/section
+                icon: icon-sitemap

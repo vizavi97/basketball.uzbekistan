@@ -54,7 +54,7 @@ tabs:
             span: full
             required: 1
             type: richeditor
-            tab: 'Tab 1'
+            tab: Контент
         images:
             label: 'Фотографии матча'
             mode: image
@@ -64,4 +64,9 @@ tabs:
                 extension: auto
             span: auto
             type: fileupload
-            tab: 'Tab 1'
+            tab: Контент
+        video_id:
+            label: 'Id Видео с youtube'
+            span: full
+            type: text
+            tab: Video

@@ -23,6 +23,11 @@ class Coach extends Model
     
     public $attachOne = [
         'preview_img' => 'System\Models\File',
+        'diploma_file' => 'System\Models\File',
+        'certificate_file' => 'System\Models\File',
+        'categories_file' => 'System\Models\File',
+        'international_file' => 'System\Models\File',
+        'other_files' => 'System\Models\File',
     ];
     
   	public $belongsToMany = [

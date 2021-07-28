@@ -2,6 +2,8 @@ title = "docs"
 url = "/documents"
 layout = "main"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 ==
 <?php
 use Tim\Basketball\Models\Docs;
@@ -13,6 +15,8 @@ function onStart() {
 	$this['referees'] = Docs::where('type','referees')->get();
 	$this['antodoping'] = Docs::where('type','antodoping')->get();
 	$this['statistic'] = Docs::where('type','statistic')->get();
+	$this['order'] = Docs::where('type','order')->get();
+
 }
 ?>
 ==
@@ -146,6 +150,27 @@ function onStart() {
 			</div>	
 			<ul class='docs-list'>
 				{% for document in statistic %}
+						<li class='docs-item'>
+							<div class="docs-item-icon">
+								<i class="fas fa-file-upload"></i>
+							</div>
+							<div class="docs-item-links">
+								<a href="{{document.docs.getpath()}}">{{document.title}}</a>
+								<a href="{{document.docs.getpath()}}" class='download' download>Скачать</a>
+							</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+	
+		{% if order is not empty  %}
+		<div class='docs-container'>
+			<div class='docs-headline'>
+				<h5>{{"Приказы"|_}}</h5>
+			</div>	
+			<ul class='docs-list'>
+				{% for document in order %}
 						<li class='docs-item'>
 							<div class="docs-item-icon">
 								<i class="fas fa-file-upload"></i>

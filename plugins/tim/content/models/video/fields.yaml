@@ -1,0 +1,9 @@
+fields:
+    title:
+        label: Заголовок
+        span: full
+        type: text
+    video_id:
+        label: "Id Видео с \_youtube"
+        span: auto
+        type: text

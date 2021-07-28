@@ -13,6 +13,7 @@ fields:
             referees: Судейство
             antodoping: Антидопинг
             statistic: Статистика
+            Order: Приказы
         span: auto
         type: radio
     docs:

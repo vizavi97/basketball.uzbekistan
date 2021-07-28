@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: id
+        type: number
+    video_id:
+        label: video_id
+        type: text
+    title:
+        label: title
+        type: text

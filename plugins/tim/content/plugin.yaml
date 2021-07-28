@@ -1,0 +1,11 @@
+plugin:
+    name: 'tim.content::lang.plugin.name'
+    description: 'tim.content::lang.plugin.description'
+    author: Tim
+    icon: oc-icon-file-video-o
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: content
+        url: tim/content/video
+        icon: icon-life-ring

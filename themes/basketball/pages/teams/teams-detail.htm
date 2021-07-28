@@ -7,6 +7,7 @@ robot_follow = "follow"
 ==
 <?php
 use Tim\Basketball\Models\Team;
+use Tim\Basketball\Models\Coach;
 use Tim\Basketball\Models\Player;
 use Tim\Basketball\Models\PlayersTeam;
 
@@ -15,6 +16,10 @@ function onStart() {
 	$this['team'] = Team::where('slug', $this->param('slug'))->first();
 	$players_ids = PlayersTeam::where('team_id',$this['team']->id)->get()->pluck('player_id')->toArray();
 	$this['players'] = Player::whereIn('id', $players_ids)->get();
+	
+	$this["coaches"] = Coach::whereHas('team', function($q) {
+		$q->where('team_id', $this['team']->id);
+	})->get();
   $this->layout->components['SeoCmsPage']->seo_title = $this['team']->name;
 }
 ?>
@@ -41,6 +46,29 @@ function onStart() {
 			</div>		
 		</div>
 		
+		{%if coaches is not empty%}
+			<h2 class='text-center'>{{"Тренера команды"}}</h2>
+			<div class='teams-players'>
+				<div class="row">
+					{%for coach in coaches%}
+						<div class="col-md-3">
+						<div class="teams-player-card">
+							<div class="teams-player-card-img">
+								{% if coach.preview_img is defined and coach.preview_img is not empty %}
+									<img src="{{coach.preview_img.getPath()}}" alt="{{coach.preview_img.name}}">
+								{% else %}
+									<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+								{% endif %}
+								</div>
+							<div class="teams-player-card-name">
+								<h4>{{coach.surname ~ " " ~ coach.name ~ " "}}</h4>
+							</div>
+						</div>
+					</div>
+					{%endfor%}
+				</div>
+			</div>
+		{%endif%}
 		<h2 class='text-center'>{{"Состав Команды"}}</h2>
 		<div class='teams-players'>
 			<div class="row">

@@ -5,42 +5,54 @@ description = "Боковое меню"
 <div class='side-bar-container'>
 	<div class='side-bar-links'>
 		<nav class="side-bar-nav">
-	    <ul class="side-bar-nav-items">
-	      <li class="side-bar-nav-item">
-	        <a href="{{'main/index' | page}}" class="side-bar-nav-item-link">
-	          Главная
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'main/staff' | page}}" class="side-bar-nav-item-link">
-	          Федерация
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'main/teams' | page}}" class="side-bar-nav-item-link">
-	          Команды
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'news/news-list' | page}}" class="side-bar-nav-item-link">
-	          Новости
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'main/docs' | page}}" class="side-bar-nav-item-link">
-	          Документы
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'photo/gallery' | page}}" class="side-bar-nav-item-link">
-	          Фотогалерея
-	        </a>
-	      </li>
-	      <li class="side-bar-nav-item">
-	        <a href="{{'main/contacts' | page}}" class="side-bar-nav-item-link">
-	          Контакты
-	        </a>
-	      </li>
+	    <ul class="side-bar-nav-item-links">
+	      
+      <li class="side-bar-nav-item-link">
+        <a href="{{'main/index' | page}}" class="side-bar-nav-item-link-link {%if this.page.id == "main-index"%} active {%endif%}">
+          {{"Главная" | _}}
+        </a>
+      </li>
+      <li class="side-bar-nav-item-link">
+        <a href="{{'main/staff' | page}}" class="side-bar-nav-item-link {%if this.page.id == "main-staff"%} active {%endif%}">
+          {{"Федерация" | _}}
+        </a>
+      </li>
+		  <li class="side-bar-nav-item-link">
+			  <a href="{{'national/main' | page}}" class="side-bar-nav-item-link  {%if this.page.id == "national-main"%} active {%endif%}">
+			    {{"Сборные" | _}}
+			  </a>
+			</li> 
+      <li class="side-bar-nav-item-link">
+        <a href="{{'main/teams' | page}}" class="side-bar-nav-item-link {%if this.page.id == "main-teams"%} active {%endif%}">
+          {{"Команды"| _}}
+        </a>
+      </li>
+      <li class="side-bar-nav-item-link">
+        <a href="{{'news/news-list' | page}}" class="side-bar-nav-item-link {%if this.page.id == "news-news-list"%} active {%endif%}">
+          {{"Новости" | _}}
+        </a>
+      </li>
+      
+      <li class="side-bar-nav-item-link">
+        <a href="{{'projects/section' | page}}" class="side-bar-nav-item-link  {%if this.page.id == "projects-section"%} active {%endif%}">
+          {{"Секции" | _}}
+        </a>
+      </li>
+      <li class="side-bar-nav-item-link">
+        <a href="{{'main/docs' | page}}" class="side-bar-nav-item-link {%if this.page.id == "main-docs"%} active {%endif%}">
+          {{"Документы" | _}}
+        </a>
+      </li>
+      <li class="side-bar-nav-item-link">
+        <a href="{{'photo/gallery' | page}}" class="side-bar-nav-item-link {%if this.page.id == "photo-gallery"%} active {%endif%}">
+          {{"Фотогалерея" | _}}
+        </a>
+      </li>
+      <li class="side-bar-nav-item-link">
+        <a href="{{'main/contacts' | page}}" class="side-bar-nav-item-link {%if this.page.id == "main-contacts"%} active {%endif%}">
+          {{"Контакты" | _}}
+        </a>
+      </li>
 	    </ul>
 	  </nav>
 	  <ul class="social-icons">

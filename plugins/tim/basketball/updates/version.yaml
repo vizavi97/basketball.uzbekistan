@@ -189,3 +189,18 @@
 1.0.64:
     - 'Updated table tim_basketball_calendar'
     - builder_table_update_tim_basketball_calendar_5.php
+1.0.65:
+    - 'Created table tim_basketball_coaches'
+    - builder_table_create_tim_basketball_coaches.php
+1.0.66:
+    - 'Created table tim_basketball_coaches_teams'
+    - builder_table_create_tim_basketball_coaches_teams.php
+1.0.67:
+    - 'Updated table tim_basketball_matches'
+    - builder_table_update_tim_basketball_matches_8.php
+1.0.68:
+    - 'Created table tim_basketball_sections'
+    - builder_table_create_tim_basketball_sections.php
+1.0.69:
+    - 'Updated table tim_basketball_coaches'
+    - builder_table_update_tim_basketball_coaches.php

@@ -1,0 +1,10 @@
+name: Video
+form: $/tim/content/models/video/fields.yaml
+modelClass: Tim\Content\Models\Video
+defaultRedirect: tim/content/video
+create:
+    redirect: 'tim/content/video/update/:id'
+    redirectClose: tim/content/video
+update:
+    redirect: tim/content/video
+    redirectClose: tim/content/video

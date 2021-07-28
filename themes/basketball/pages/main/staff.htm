@@ -2,12 +2,15 @@ title = "Федерация"
 url = "/staff"
 layout = "main"
 is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
 ==
 <?php
 use Tim\Basketball\Models\Administration;
 
 function onStart() {
 	$this['administration'] = Administration::where('category', 'main')->get()->sortBy('number');
+	$this['leadership'] = Administration::where('category', 'leadership')->get()->sortBy('number');
 }
 ?>
 ==
@@ -16,10 +19,10 @@ function onStart() {
 		<div class='staff-container'>
 			<div class='staff-group'>
 				<div class='staff-headline headline'>
-						<h2>{{"Администрация"|_}}</h2>
+						<h2>{{"Руководство"|_}}</h2>
 				</div>
 				<ul class='staff-list'>
-					{% for adm in administration %}
+					{% for adm in leadership %}
 					<li class='staff-item col-lg-2 col-md-4 col-sm-6 col-12'>
 						<div class='staff-item-image'>
 							{% if adm.preview_img is defined and adm.preview_img is not empty %}
@@ -37,6 +40,31 @@ function onStart() {
 					{% endfor %}
 				</ul>
 			</div>
+			{% if administration is not empty %}
+				<div class='staff-group'>
+					<div class='staff-headline headline'>
+							<h2>{{"Администрация"|_}}</h2>
+					</div>
+					<ul class='staff-list'>
+						{% for adm in administration %}
+						<li class='staff-item col-lg-2 col-md-4 col-sm-6 col-12'>
+							<div class='staff-item-image'>
+								{% if adm.preview_img is defined and adm.preview_img is not empty %}
+									<img src="{{adm.preview_img.getPath()}}" alt="{{adm.name ~ " " ~  adm.surname}}">
+								{% else %}
+									<img src="https://i.pinimg.com/originals/9f/00/af/9f00af501d2d324ac7f8ebb559fc25dd.png" alt="staff">
+								{% endif %}
+							</div>
+							<div class='staff-item-info'>
+								<h5>{{adm.name}}</h5>
+								<h4>{{adm.surname}}</h4>
+								<h6>{{adm.position}}</h6>
+							</div>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			{%endif%}
 		</div>
 	</div>
 </section>

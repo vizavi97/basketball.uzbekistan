@@ -11,7 +11,10 @@ sortOrder = "published_at desc"
 categoryPage = "news/news-list"
 postPage = "news/news-detail"
 ==
-<div class="owl-carousel owl-theme main-banner">
+<section class='container'>
+	<div class='row'>
+		<div class="col-md-12">
+			<div class="owl-carousel owl-theme main-banner">
 	{% for post in posts if post.published %}
 		  <div class="main-banner-container">
 		  	<div class='main-banner-img'>
@@ -44,6 +47,9 @@ postPage = "news/news-detail"
 		 </div>
 	{%endfor%}
 </div>
+		</div>
+	</div>
+</section>
 
 {% put styles %}
 <link rel="stylesheet"

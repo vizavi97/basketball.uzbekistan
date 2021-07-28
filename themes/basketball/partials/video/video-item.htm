@@ -1,12 +1,14 @@
+description = "Видео"
+
 [viewBag]
 ==
 <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
+<div id="player-{{video}}"></div>
 
 
 {%put scripts%}
 <script>
-	
+			var videoId = "{{video}}"
    // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
 
@@ -18,10 +20,10 @@
       //    after the API code downloads.
       var player;
       function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
+        player = new YT.Player('player-{{video}}', {
           height: '360',
           width: '100%',
-          videoId: 'PWlP4Cwsibs',
+          videoId: videoId,
           events: {
             'onStateChange': onPlayerStateChange
           }

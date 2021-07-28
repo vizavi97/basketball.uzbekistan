@@ -9,6 +9,7 @@ function onStart() {
 	$this['phoneLink'] = "+998955151881";
 	$this['phone'] = "+998(95) 515-18-81";
 	$this['mail'] = "info@uzbf.uz";
+	$this['cssTimer'] = date('l jS \of F Y h:i:s A');
 }
 ?>
 ==
@@ -27,11 +28,30 @@ function onStart() {
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous">
   <link rel="stylesheet"
-        href="{{'assets/css/styles.css' | theme}}"
+        href="{{'assets/css/styles.css' | theme}}?{{cssTimer}}"
         crossorigin="anonymous">
   {% component 'SeoCmsPage' %}
   {% styles %}
 </head>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '502089087902306');
+fbq('track', 'PageView');
+</script>
+<noscript>
+	<img height="1" width="1" style="display:none"
+		src="https://www.facebook.com/tr?id=502089087902306&ev=PageView&noscript=1"
+	/>
+</noscript>
+<!-- End Facebook Pixel Code -->
 <body>
   <header class="header">
     <div class="header-top">
@@ -41,9 +61,10 @@ function onStart() {
 						<img src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}" alt="logo">
       	  </a>
         </div>
+        <p class='mb-0 px-2' style='color: #e10a30; font-size: 1.25rem'>{{'Сайт работает в тестовом режиме'|_}}</p>
         <div class="header-top-date">
           <i class="fas fa-calendar-alt"></i>
-          <time datetime="{{ "now"|date("m/d/Y")}}">{{ "now"|date("m/d/Y") }}</time> 
+          <time datetime="{{ "now"|date("d/m/Y")}}">{{ "now"|date("d/m/Y") }}</time> 
         </div>
       </div>
     </div>
@@ -77,6 +98,7 @@ function onStart() {
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 <script src="{{'assets/js/script.js' | theme}}"></script>
+
 {% framework extras %}
 {% scripts %}
 </body>

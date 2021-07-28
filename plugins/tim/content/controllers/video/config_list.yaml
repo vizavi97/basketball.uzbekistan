@@ -1,0 +1,12 @@
+list: $/tim/content/models/video/columns.yaml
+modelClass: Tim\Content\Models\Video
+title: Video
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'tim/content/video/update/:id'

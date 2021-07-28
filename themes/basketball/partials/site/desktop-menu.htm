@@ -35,6 +35,7 @@ description = "Меню на основной версии сайта"
           {{"Новости" | _}}
         </a>
       </li>
+      
       <li class="header-menu-nav-item">
         <a href="{{'projects/section' | page}}" class="header-menu-nav-item  {%if this.page.id == "projects-section"%} active {%endif%}">
           {{"Секции" | _}}
@@ -48,6 +49,11 @@ description = "Меню на основной версии сайта"
       <li class="header-menu-nav-item">
         <a href="{{'photo/gallery' | page}}" class="header-menu-nav-item {%if this.page.id == "photo-gallery"%} active {%endif%}">
           {{"Фотогалерея" | _}}
+        </a>
+      </li>
+      <li class="header-menu-nav-item">
+        <a href="{{'video/video' | page}}" class="header-menu-nav-item {%if this.page.id == "main-contacts"%} active {%endif%}">
+          {{"Видео" | _}}
         </a>
       </li>
       <li class="header-menu-nav-item">

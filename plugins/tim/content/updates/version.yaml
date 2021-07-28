@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table tim_content_video'
+    - builder_table_create_tim_content_video.php

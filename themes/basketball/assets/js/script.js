@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const togglerBtn = document.getElementById('toggler-btn');
-  const sideBar = document.getElementById('side-bar');
-  const overlay = document.getElementById('overlay');
+  var togglerBtn = document.getElementById('toggler-btn');
+  var sideBar = document.getElementById('side-bar');
+  var overlay = document.getElementById('overlay');
   togglerBtn.addEventListener('click', function () {
     sideBar.classList.add('show');
     overlay.classList.add('show')

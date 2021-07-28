@@ -1,0 +1,27 @@
+title = "video"
+url = "/video"
+layout = "main"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<?php
+use Tim\Content\Models\Video;
+
+function onStart() {
+	$this['videos'] = Video::all();
+}
+?>
+==
+<section class="container">
+	<div class='row'>
+		<div class="col-md-6 col-sm-12">
+			{% for video in videos %}
+				<div class="video-item mb-3">
+					<h2>{{video.title}}</h2>
+					{% partial 'video/video-item' video=video.video_id %}
+				</div>
+			{%endfor%}
+		</div>
+	</div>
+</section>
