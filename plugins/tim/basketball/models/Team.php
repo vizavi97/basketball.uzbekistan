@@ -32,7 +32,8 @@ class Team extends Model
     ];
     
     public $attachOne = [
-    'img' => 'System\Models\File'
+    'img' => 'System\Models\File',
+    'section_preview_img' => 'System\Models\File',
     ];
     
 }

@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'url' => 'http://uzbekistan.basketball/',
+    'url' => 'https://uzbekistan.basketball/',
 
     /*
     |--------------------------------------------------------------------------
