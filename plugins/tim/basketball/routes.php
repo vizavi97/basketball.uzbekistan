@@ -59,7 +59,7 @@ Route::group(['prefix' => 'api'], function () {
             ];
             if ($userModel->groups[0]->code == "coach") {
                 $coach = Coach::where('user_id', $userModel->id)->first();
-                return response()->json(compact('token', 'user', $coach));
+                return response()->json(compact('token', 'user', 'coach'));
             }
         }
         // if no errors are encountered we can return a JWT
@@ -317,7 +317,7 @@ Route::group(['prefix' => 'api'], function () {
                 $playersTeam->player_id = $player_id;
                 $playersTeam->save();
             }
-            return response()->json(["team" => $team, 'message' => "created"]);
+            return response()->json(["teams" => $team, 'message' => "created"]);
         });
         Route::post('get-teams', function (Request $request) {
             return response()->json(
