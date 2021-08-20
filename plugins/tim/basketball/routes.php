@@ -143,9 +143,7 @@ Route::group(['prefix' => 'api'], function () {
             if (!$claim = JWT::getPayload()) {
                 return response()->json(array('message' => 'user_not_found'), 404);
             }
-
             $userData = JWT::toUser($token);
-
             if (isset($userData->groups[0])) {
                 $user = [
                     'name' => $userData->name,
@@ -157,6 +155,7 @@ Route::group(['prefix' => 'api'], function () {
                     'role' => isset($userData->groups) ? $userData->groups[0]->code : null
                 ];
                 if ($userData->groups[0]->code == "coach") {
+                    $user['id'] = $userData->id;
                     $coach = Coach::where('user_id', $userData->id)->first();
                     return response()->json(["user" => $user, "coach" => $coach]);
                 }

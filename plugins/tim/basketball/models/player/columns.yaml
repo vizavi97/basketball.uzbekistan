@@ -2,6 +2,8 @@ columns:
     id:
         label: id
         type: number
+    preview_img:
+        label: preview_img
     name:
         label: name
         type: text
@@ -20,3 +22,4 @@ columns:
     updated_at:
         label: updated_at
         type: datetime
+
