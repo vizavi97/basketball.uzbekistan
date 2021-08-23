@@ -1,0 +1,11 @@
+plugin:
+    name: 'tim.staticplugin::lang.plugin.name'
+    description: 'tim.staticplugin::lang.plugin.description'
+    author: Tim
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    static:
+        label: Static
+        url: tim/staticplugin/regioncontroller
+        icon: icon-barcode

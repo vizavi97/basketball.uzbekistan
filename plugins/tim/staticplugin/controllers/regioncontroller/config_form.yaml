@@ -1,0 +1,10 @@
+name: RegionController
+form: $/tim/staticplugin/models/region/fields.yaml
+modelClass: Tim\Staticplugin\Models\Region
+defaultRedirect: tim/staticplugin/regioncontroller
+create:
+    redirect: 'tim/staticplugin/regioncontroller/update/:id'
+    redirectClose: tim/staticplugin/regioncontroller
+update:
+    redirect: tim/staticplugin/regioncontroller
+    redirectClose: tim/staticplugin/regioncontroller

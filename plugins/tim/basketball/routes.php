@@ -7,6 +7,7 @@ use Tim\Basketball\Models\Coach;
 use Tim\Basketball\Models\Player;
 use Tim\Basketball\Models\PlayersTeam;
 use Tim\Basketball\Models\Team;
+use Tim\Staticplugin\Models\Region;
 use Tymon\JWTAuth\Facades\JWTAuth as JWT;
 use Illuminate\Http\Request;
 use Vdomah\JWTAuth\Models\Settings;
@@ -16,7 +17,6 @@ use Carbon\Carbon;
 use Tim\Basketball\Models\Calendar;
 
 Route::group(['prefix' => 'api'], function () {
-
     Route::get('calendar', function () {
 
         $events = Calendar::whereDate('date', '>', Carbon::now())->get();
@@ -24,7 +24,6 @@ Route::group(['prefix' => 'api'], function () {
         return response()->json($events);
 
     });
-
     Route::post('login', function (Request $request) {
         if (Settings::get('is_login_disabled'))
             App::abort(404, 'Page not found');
@@ -65,7 +64,6 @@ Route::group(['prefix' => 'api'], function () {
         // if no errors are encountered we can return a JWT
         return response()->json(compact('token', 'user'));
     });
-
     Route::post('refresh', function (Request $request) {
         if (Settings::get('is_refresh_disabled'))
             App::abort(404, 'Page not found');
@@ -85,7 +83,6 @@ Route::group(['prefix' => 'api'], function () {
         // if no errors are encountered we can return a new JWT
         return response()->json(compact('token'));
     });
-
     Route::post('invalidate', function (Request $request) {
         if (Settings::get('is_invalidate_disabled'))
             App::abort(404, 'Page not found');
@@ -103,7 +100,6 @@ Route::group(['prefix' => 'api'], function () {
         // if no errors we can return a message to indicate that the token was invalidated
         return response()->json('token_invalidated');
     });
-
     Route::post('signup', function (Request $request) {
         if (Settings::get('is_signup_disabled'))
             App::abort(404, 'Page not found');
@@ -135,7 +131,6 @@ Route::group(['prefix' => 'api'], function () {
 
         return Response::json(compact('token', 'user'));
     });
-
     Route::post('profile', function (Request $request) {
         $token = $request->token;
         try {
@@ -180,7 +175,6 @@ Route::group(['prefix' => 'api'], function () {
             return response()->json(array('message' => 'token_absent'), 404);
         }
     });
-
     Route::post('change-user-info', function (Request $request) {
         $token = $request->header('Authorization');
         try {
@@ -219,7 +213,6 @@ Route::group(['prefix' => 'api'], function () {
             return response()->json(array('message' => 'token_absent'), 404);
         }
     });
-
     Route::post('coach-register', function (Request $request) {
         try {
             $coach = new Coach;
@@ -256,7 +249,6 @@ Route::group(['prefix' => 'api'], function () {
             return response()->json(array('message' => 'token_expired'), 404);
         }
     });
-
     Route::group(['prefix' => 'player'], function () {
         Route::post('create', function (Request $request) {
             $player = new Player;
@@ -295,7 +287,6 @@ Route::group(['prefix' => 'api'], function () {
             );
         });
     });
-
     Route::group(['prefix' => 'team'], function () {
         Route::post('create', function (Request $request) {
             $team = new Team;
@@ -329,6 +320,14 @@ Route::group(['prefix' => 'api'], function () {
                 ["message" => "deleted"]
             );
         });
+    });
+    Route::get('user-info', function() {
+       $users = UserModel::find(2);
+        dump($users);
+//       return response()->json($users);
+    });
+    Route::get('region', function (){
+        return response()->json(Region::all());
     });
 });
 

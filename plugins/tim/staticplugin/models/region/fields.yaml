@@ -1,0 +1,13 @@
+fields:
+    title:
+        label: 'Название региона'
+        span: auto
+        type: text
+    code:
+        label: slug
+        span: auto
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
+        type: text

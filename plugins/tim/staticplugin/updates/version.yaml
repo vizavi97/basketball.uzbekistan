@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table tim_staticplugin_region'
+    - builder_table_create_tim_staticplugin_region.php
+1.0.3:
+    - 'Updated table tim_staticplugin_region'
+    - builder_table_update_tim_staticplugin_region.php
