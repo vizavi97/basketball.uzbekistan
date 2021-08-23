@@ -1,6 +1,7 @@
 <?php namespace Tim\Basketball\Models;
 
 use Model;
+use Tim\Staticplugin\Models\Region;
 
 /**
  * Model
@@ -29,7 +30,10 @@ class Coach extends Model
         'international_file' => 'System\Models\File',
         'other_files' => 'System\Models\File',
     ];
-    
+
+    public $belongsTo = [
+        "region" => Region::class
+    ];
   	public $belongsToMany = [
     'team' => [
         	'Tim\Basketball\Models\Team',

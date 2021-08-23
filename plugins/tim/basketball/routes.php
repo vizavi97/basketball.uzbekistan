@@ -48,6 +48,7 @@ Route::group(['prefix' => 'api'], function () {
             $user = $userModel->getAuthApiSigninAttributes();
         } else {
             $user = [
+                'id' => $userModel->id,
                 'name' => $userModel->name,
                 'surname' => $userModel->surname,
                 'username' => $userModel->username,
@@ -104,7 +105,7 @@ Route::group(['prefix' => 'api'], function () {
         if (Settings::get('is_signup_disabled'))
             App::abort(404, 'Page not found');
 
-        $login_fields = Settings::get('signup_fields', ['email', 'password', 'password_confirmation']);
+        $login_fields = Settings::get('signup_fields', ['email', 'phone', 'password', 'password_confirmation']);
         $credentials = Input::only($login_fields);
 
         try {
@@ -121,6 +122,43 @@ Route::group(['prefix' => 'api'], function () {
                     'email' => $userModel->email,
                     'is_activated' => $userModel->is_activated,
                     'phone' => $userModel->phone,
+                    'groups' => 3
+                ];
+            }
+        } catch (Exception $e) {
+            return Response::json(['error' => $e->getMessage()], 401);
+        }
+
+        $token = JWTAuth::fromUser($userModel);
+
+        return Response::json(compact('token', 'user'));
+    });
+    Route::post('signup-player', function (Request $request) {
+        if (Settings::get('is_signup_disabled'))
+            App::abort(404, 'Page not found');
+
+        $login_fields = Settings::get('signup_fields', ['email', 'phone', 'password', 'password_confirmation']);
+        $credentials = Input::only($login_fields);
+
+        try {
+            $userModel = UserModel::create($credentials);
+            $userModel->vdomah_role_id = 5;
+            $userModel->groups = 4;
+
+            $userModel->save();
+
+            if ($userModel->methodExists('getAuthApiSignupAttributes')) {
+                $user = $userModel->getAuthApiSignupAttributes();
+            } else {
+                $user = [
+                    'id' => $userModel->id,
+                    'name' => $userModel->name,
+                    'surname' => $userModel->surname,
+                    'username' => $userModel->username,
+                    'email' => $userModel->email,
+                    'is_activated' => $userModel->is_activated,
+                    'phone' => $userModel->phone,
+                    "role" => $userModel->groups[0]->code
                 ];
             }
         } catch (Exception $e) {
@@ -139,22 +177,6 @@ Route::group(['prefix' => 'api'], function () {
                 return response()->json(array('message' => 'user_not_found'), 404);
             }
             $userData = JWT::toUser($token);
-            if (isset($userData->groups[0])) {
-                $user = [
-                    'name' => $userData->name,
-                    'surname' => $userData->surname,
-                    'username' => $userData->username,
-                    'email' => $userData->email,
-                    'is_activated' => $userData->is_activated,
-                    'phone' => $userData->phone,
-                    'role' => isset($userData->groups) ? $userData->groups[0]->code : null
-                ];
-                if ($userData->groups[0]->code == "coach") {
-                    $user['id'] = $userData->id;
-                    $coach = Coach::where('user_id', $userData->id)->first();
-                    return response()->json(["user" => $user, "coach" => $coach]);
-                }
-            }
             $user = [
                 'name' => $userData->name,
                 'surname' => $userData->surname,
@@ -162,11 +184,20 @@ Route::group(['prefix' => 'api'], function () {
                 'email' => $userData->email,
                 'is_activated' => $userData->is_activated,
                 'phone' => $userData->phone,
+                'role' => isset($userData->groups) ? $userData->groups[0]->code : null
             ];
+            if ($userData->groups[0]->code == "coach") {
+                $user['id'] = $userData->id;
+                $coach = Coach::where('user_id', $userData->id)->first();
+                return response()->json(["user" => $user, "coach" => $coach]);
+            }
+            if ($userData->groups[0]->code == "player") {
+                $user['id'] = $userData->id;
+                $coach = Player::where('user_id', $userData->id)->first();
+                return response()->json(["user" => $user, "coach" => $coach]);
+            }
 
             return response()->json(["user" => $user]);
-
-
         } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
             return response()->json(array('message' => 'token_expired'), 404);
         } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
@@ -215,11 +246,17 @@ Route::group(['prefix' => 'api'], function () {
     });
     Route::post('coach-register', function (Request $request) {
         try {
+            JWT::setToken($request->token); //<-- set token and check
+            if (!$claim = JWT::getPayload()) {
+                return response()->json(array('message' => 'user_not_found'), 404);
+            }
+            $user = JWT::toUser($request->token);
             $coach = new Coach;
             $coach->name = $request->name;
             $coach->surname = $request->surname;
-            $coach->user_id = $request->user_id;
+            $coach->user_id = $user->id;
             $coach->position = $request->position;
+            $coach->region_id = $request->region;
             $coach->pc_quality = $request->pc_quality;
             $coach->langs = $request->langs;
             $coach->living_address = $request->living_address;
@@ -233,10 +270,10 @@ Route::group(['prefix' => 'api'], function () {
             $coach->preview_img = $request->preview_img;
             $coach->save();
 
-            $user = UserModel::find($request->user_id);
             $user->is_activated = true;
             $user->name = $request->name;
             $user->surname = $request->surname;
+            $user->city = Region::find($request->region)->title;
             $user->activated_at = time();
             $user->groups = 3;
             $user->save();
@@ -251,6 +288,11 @@ Route::group(['prefix' => 'api'], function () {
     });
     Route::group(['prefix' => 'player'], function () {
         Route::post('create', function (Request $request) {
+            JWT::setToken($request->token); //<-- set token and check
+            if (!$claim = JWT::getPayload()) {
+                return response()->json(array('message' => 'user_not_found'), 404);
+            }
+            $user = JWT::toUser($request->token);
             $player = new Player;
             $player->name = $request->name;
             $player->surname = $request->surname;
@@ -272,8 +314,20 @@ Route::group(['prefix' => 'api'], function () {
             $player->mother_height = $request->mother_height;
             $player->father_height = $request->father_height;
             $player->coach_id = $request->coach_id;
+            $player->user_id = $user->id;
             $player->save();
-            return response()->json(["player" => $player, 'message' => "created"]);
+
+            $user->is_activated = true;
+            $user->name = $request->name;
+            $user->surname = $request->surname;
+            $user->activated_at = time();
+            $user->groups = 4;
+            $user->save();
+            return response()->json([
+                "is_activated" => true,
+                "player" => $player,
+                "user" => $user
+            ]);
         });
         Route::post('get-players', function (Request $request) {
             return response()->json(
@@ -321,12 +375,7 @@ Route::group(['prefix' => 'api'], function () {
             );
         });
     });
-    Route::get('user-info', function() {
-       $users = UserModel::find(2);
-        dump($users);
-//       return response()->json($users);
-    });
-    Route::get('region', function (){
+    Route::get('region', function () {
         return response()->json(Region::all());
     });
 });
