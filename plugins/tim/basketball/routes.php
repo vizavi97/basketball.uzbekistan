@@ -16,7 +16,7 @@ use System\Modal\files;
 use Carbon\Carbon;
 use Tim\Basketball\Models\Calendar;
 
-Route::group(['prefix' => 'api'], function () {
+Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::class], function () {
     Route::get('calendar', function () {
 
         $events = Calendar::whereDate('date', '>', Carbon::now())->get();
