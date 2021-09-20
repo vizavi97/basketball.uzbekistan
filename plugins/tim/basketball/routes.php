@@ -184,8 +184,11 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
                 'email' => $userData->email,
                 'is_activated' => $userData->is_activated,
                 'phone' => $userData->phone,
-                'role' => isset($userData->groups) ? $userData->groups[0]->code : null
+                'role' => (isset($userData->groups) && sizeof($userData->groups)) ? $userData->groups[0]->code : null
             ];
+            if (is_null($user['role'])) {
+                return response()->json(["user" => $user]);
+            }
             if ($userData->groups[0]->code == "coach") {
                 $user['id'] = $userData->id;
                 $coach = Coach::where('user_id', $userData->id)->first();
@@ -196,8 +199,6 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
                 $coach = Player::where('user_id', $userData->id)->first();
                 return response()->json(["user" => $user, "coach" => $coach]);
             }
-
-            return response()->json(["user" => $user]);
         } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
             return response()->json(array('message' => 'token_expired'), 404);
         } catch (\Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
