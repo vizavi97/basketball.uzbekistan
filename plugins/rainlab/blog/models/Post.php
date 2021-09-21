@@ -93,7 +93,10 @@ class Post extends Model
 
     public $attachMany = [
         'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
-        'content_images'  => ['System\Models\File']
+        'content_images'  => ['System\Models\File'],
+        'preview_img_ru'  => 'System\Models\File',
+        'preview_img_uz'  => 'System\Models\File',
+        'preview_img_en'  => 'System\Models\File',
     ];
 
     /**

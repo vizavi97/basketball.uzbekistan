@@ -1,60 +1,91 @@
-# ===================================
-#  Field Definitions
-# ===================================
-
 fields:
-
     title:
-        label: rainlab.blog::lang.post.title
+        label: 'rainlab.blog::lang.post.title'
         span: left
-        placeholder: rainlab.blog::lang.post.title_placeholder
-
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
     slug:
-        label: rainlab.blog::lang.post.slug
+        label: 'rainlab.blog::lang.post.slug'
         span: right
-        placeholder: rainlab.blog::lang.post.slug_placeholder
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
         preset:
             field: title
             type: slug
-
+        type: text
     toolbar:
         type: partial
         path: post_toolbar
         cssClass: collapse-visible
-
+tabs:
+    fields:
+        is_close_text:
+            label: 'Скрыть текст на главной'
+            span: auto
+            type: switch
+            tab: 'Tab 1'
+        is_translated_img:
+            label: Switch
+            span: auto
+            type: switch
+            tab: 'Фотографии на главную'
+        preview_img_ru:
+            label: 'Фото на русском'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Фотографии на главную'
+        preview_img_uz:
+            label: 'Фото на узбекском'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Фотографии на главную'
+        preview_img_en:
+            label: 'Фото на Английском'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Фотографии на главную'
 secondaryTabs:
-    stretch: true
     fields:
         content:
-            tab: rainlab.blog::lang.post.tab_edit
+            tab: 'rainlab.blog::lang.post.tab_edit'
             type: RainLab\Blog\FormWidgets\BlogMarkdown
-            cssClass: field-slim blog-post-preview
+            cssClass: 'field-slim blog-post-preview'
             stretch: true
             mode: split
-
         categories:
-            tab: rainlab.blog::lang.post.tab_categories
+            tab: 'rainlab.blog::lang.post.tab_categories'
             type: relation
-            commentAbove: rainlab.blog::lang.post.categories_comment
-            placeholder: rainlab.blog::lang.post.categories_placeholder
-
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
         published:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
             span: left
             type: checkbox
-
         user:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_by
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_by'
             span: right
             type: relation
             nameFrom: login
-            emptyOption: rainlab.blog::lang.post.current_user
-
+            emptyOption: 'rainlab.blog::lang.post.current_user'
         published_at:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_on
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_on'
             span: left
             cssClass: checkbox-align
             type: datepicker
@@ -63,16 +94,14 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
-
         excerpt:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.excerpt
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.excerpt'
             type: textarea
             size: small
-
         featured_images:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.featured_images
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.featured_images'
             type: fileupload
             mode: image
             imageWidth: 200

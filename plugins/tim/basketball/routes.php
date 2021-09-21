@@ -58,8 +58,16 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
                 'role' => $userModel->groups[0]->code
             ];
             if ($userModel->groups[0]->code == "coach") {
-                $coach = Coach::where('user_id', $userModel->id)->first();
-                return response()->json(compact('token', 'user', 'coach'));
+                $user['id'] = $userModel->id;
+                $coach = Coach::with("preview_img")->where('user_id', $userModel->id)->first();
+                $user["preview_img"] = $coach->preview_img;
+                return response()->json(["token" => $token, "user" => $user, "coach" => $coach]);
+            }
+            if ($userModel->groups[0]->code == "player") {
+                $user['id'] = $userModel->id;
+                $player = Player::with("preview_img")->where('user_id', $userModel->id)->first();
+                $user["preview_img"] = $player->preview_img;
+                return response()->json(["token" => $token, "user" => $user, "player" => $player]);
             }
         }
         // if no errors are encountered we can return a JWT
@@ -191,13 +199,15 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
             }
             if ($userData->groups[0]->code == "coach") {
                 $user['id'] = $userData->id;
-                $coach = Coach::where('user_id', $userData->id)->first();
+                $coach = Coach::with("preview_img")->where('user_id', $userData->id)->first();
+                $user["preview_img"] = $coach->preview_img;
                 return response()->json(["user" => $user, "coach" => $coach]);
             }
             if ($userData->groups[0]->code == "player") {
                 $user['id'] = $userData->id;
-                $coach = Player::where('user_id', $userData->id)->first();
-                return response()->json(["user" => $user, "coach" => $coach]);
+                $player = Player::with("preview_img")->where('user_id', $userData->id)->first();
+                $user["preview_img"] = $player->preview_img;
+                return response()->json(["user" => $user, "player" => $player]);
             }
         } catch (\Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
             return response()->json(array('message' => 'token_expired'), 404);
@@ -278,6 +288,7 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
             $user->activated_at = time();
             $user->groups = 3;
             $user->save();
+            $user->preview_img = $coach->preview_img;
             return response()->json([
                 "is_activated" => true,
                 "coach" => $coach,
@@ -324,6 +335,7 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
             $user->activated_at = time();
             $user->groups = 4;
             $user->save();
+            $user->preview_img = $player->preview_img;
             return response()->json([
                 "is_activated" => true,
                 "player" => $player,

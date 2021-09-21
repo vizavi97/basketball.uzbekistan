@@ -10,56 +10,118 @@ noPostsMessage = "Записей не найдено"
 sortOrder = "published_at desc"
 categoryPage = "news/news-list"
 postPage = "news/news-detail"
+
+[localePicker]
+forceUrl = 0
 ==
 <section class='container'>
-	<div class='row'>
-		<div class="col-md-12">
-			<div class="owl-carousel owl-theme main-banner">
-	{% for post in posts if post.published %}
-		  <div class="main-banner-container">
-		  	<div class='main-banner-img'>
-				{% if post.featured_images is empty %}
-		  			<img src="{{'assets/images/slideshow/444.jpg' | theme}}" alt="slider">
-						{% else %}
-						{% for image in post.featured_images|slice(0,1) %}
-							<img 
-									data-src="{{ image.filename }}"
-									src="{{ image.path }}"
-									alt="{{ image.description }}"> 
-				    {% endfor %}							
-					{% endif %}
-		  </div>
-		  	<div class='main-banner-content'>
-		  		
-					{% if not category %}
-						<h6>Category not found</h6>
-					{% else %}
-						<h6>{{category.name}}</h6>
-					{%endif%}
-		  		<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-		      <ul>
-		      	<li>
-		      		<i class="far fa-clock"></i>           
-		      		<span>{{ "Posted on :date"|_({date: post.published_at|date('y:m:d')})}}</span>
-						</li>
-		      </ul>
-			 </div>
-		 </div>
-	{%endfor%}
-</div>
-		</div>
-	</div>
+    <div class='row'>
+        <div class="col-md-12">
+            <div class="owl-carousel owl-theme main-banner">
+                {% for post in posts if post.published %}
+                    {% if post.is_translated_img %}
+                        <div class="main-banner-container">
+                            <div class='main-banner-img'>
+                                <a href="{{ post.url }}" style='display:block;z-index: 300; position:relative'>
+                                    {% if activeLocale == "uz" %}
+                                        <img
+                                                data-src="{{ post.preview_img_uz[0].filename }}"
+                                                src="{{ post.preview_img_uz[0].path }}"
+                                                alt="{{ post.preview_img_uz[0].description }}">
+                                    {% elseif activeLocale == "ru" %}
+                                        <img
+                                                data-src="{{ post.preview_img_ru[0].filename }}"
+                                                src="{{ post.preview_img_ru[0].path }}"
+                                                alt="{{ post.preview_img_ru[0].description }}">
+                                    {% elseif activeLocale == "en" %}
+                                            <img
+                                                    data-src="{{ post.preview_img_en[0].filename }}"
+                                                    src="{{ post.preview_img_en[0].path }}"
+                                                    alt="{{ post.preview_img_en[0].description }}">
+                                    {% endif %}
+                                </a>
+                            </div>
+                            {% if post.is_close_text == false %}
+                                <div class='main-banner-content'>
+
+                                    {% if not category %}
+                                        <h6>Category not found</h6>
+                                    {% else %}
+                                        <h6>{{ category.name }}</h6>
+                                    {% endif %}
+                                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                                    <ul>
+                                        <li>
+                                            <i class="far fa-clock"></i>
+                                            <span>{{ "Posted on :date"|_({date: post.published_at|date('y:m:d')}) }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div class="main-banner-container">
+                            <div class='main-banner-img'>
+                                {% if post.is_close_text %}
+                                    <a href="{{ post.url }}" style='display:block;z-index: 300; position:relative'>
+                                        {% if post.featured_images is empty %}
+                                            <img src="{{ 'assets/images/slideshow/444.jpg' | theme }}" alt="slider">
+                                        {% else %}
+                                            {% for image in post.featured_images|slice(0,1) %}
+                                                <img
+                                                        data-src="{{ image.filename }}"
+                                                        src="{{ image.path }}"
+                                                        alt="{{ image.description }}">
+                                            {% endfor %}
+                                        {% endif %}
+                                    </a>
+                                {% else %}
+                                    {% if post.featured_images is empty %}
+                                        <img src="{{ 'assets/images/slideshow/444.jpg' | theme }}" alt="slider">
+                                    {% else %}
+                                        {% for image in post.featured_images|slice(0,1) %}
+                                            <img
+                                                    data-src="{{ image.filename }}"
+                                                    src="{{ image.path }}"
+                                                    alt="{{ image.description }}">
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {% if post.is_close_text == false %}
+                                <div class='main-banner-content'>
+
+                                    {% if not category %}
+                                        <h6>Category not found</h6>
+                                    {% else %}
+                                        <h6>{{ category.name }}</h6>
+                                    {% endif %}
+                                    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                                    <ul>
+                                        <li>
+                                            <i class="far fa-clock"></i>
+                                            <span>{{ "Posted on :date"|_({date: post.published_at|date('y:m:d')}) }}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </section>
 
 {% put styles %}
-<link rel="stylesheet"
-      href="{{'assets/libs/owl-carousel/assets/owl.carousel.css' | theme}}"
-      crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="{{ 'assets/libs/owl-carousel/assets/owl.carousel.css' | theme }}"
+          crossorigin="anonymous">
 {% endput %}
 
 {% put scripts %}
-<script type="text/javascript"
-        src="{{'assets/libs/owl-carousel/owl.carousel.js' | theme}}"></script>
-<script type="text/javascript"
-        src="{{'assets/js/main.js' | theme}}"></script>
+    <script type="text/javascript"
+            src="{{ 'assets/libs/owl-carousel/owl.carousel.js' | theme }}"></script>
+    <script type="text/javascript"
+            src="{{ 'assets/js/main.js' | theme }}"></script>
 {% endput %}
