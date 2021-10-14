@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  console.log('document dom is loaded!!!!')
   var togglerBtn = document.getElementById('toggler-btn');
   var sideBar = document.getElementById('side-bar');
   var overlay = document.getElementById('overlay');
@@ -12,3 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 });
 
+window.onload = function () {
+  document.querySelector('.spinner-overlay').remove();
+  document.querySelector('body').style.overflow = "auto";
+}

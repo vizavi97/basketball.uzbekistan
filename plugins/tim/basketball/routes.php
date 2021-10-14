@@ -44,9 +44,11 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
 
         $userModel = JWTAuth::authenticate($token);
 
+
         if ($userModel->methodExists('getAuthApiSigninAttributes')) {
             $user = $userModel->getAuthApiSigninAttributes();
         } else {
+
             $user = [
                 'id' => $userModel->id,
                 'name' => $userModel->name,
@@ -55,20 +57,25 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
                 'email' => $userModel->email,
                 'is_activated' => $userModel->is_activated,
                 'phone' => $userModel->phone,
-                'role' => $userModel->groups[0]->code
             ];
-            if ($userModel->groups[0]->code == "coach") {
-                $user['id'] = $userModel->id;
-                $coach = Coach::with("preview_img")->where('user_id', $userModel->id)->first();
-                $user["preview_img"] = $coach->preview_img;
-                return response()->json(["token" => $token, "user" => $user, "coach" => $coach]);
+            if (isset($userModel->groups[0])) {
+                $user['role'] = $userModel->groups[0]->code;
+
+                if ($userModel->groups[0]->code == "coach") {
+                    $user['id'] = $userModel->id;
+                    $coach = Coach::with("preview_img")->where('user_id', $userModel->id)->first();
+                    $user["preview_img"] = $coach->preview_img;
+                    return response()->json(["token" => $token, "user" => $user, "coach" => $coach]);
+                }
+                if ($userModel->groups[0]->code == "player") {
+                    $user['id'] = $userModel->id;
+                    $player = Player::with("preview_img")->where('user_id', $userModel->id)->first();
+                    $user["preview_img"] = $player->preview_img;
+                    return response()->json(["token" => $token, "user" => $user, "player" => $player]);
+                }
             }
-            if ($userModel->groups[0]->code == "player") {
-                $user['id'] = $userModel->id;
-                $player = Player::with("preview_img")->where('user_id', $userModel->id)->first();
-                $user["preview_img"] = $player->preview_img;
-                return response()->json(["token" => $token, "user" => $user, "player" => $player]);
-            }
+            $user['role'] = null;
+            return response()->json(compact('token', 'user'));
         }
         // if no errors are encountered we can return a JWT
         return response()->json(compact('token', 'user'));
