@@ -24,13 +24,59 @@ public function onEnd() {
     $post = $this['blogPost'] ? $this['blogPost']->post : null;
     if (!$post) {
         return Redirect::to('/404');
-    };   
-    //$this->page->title = $post->title;
+    };
+    $this->page->title = $post->title;
     //$this->page->meta_title = $post->title;
 }
 ?>
 ==
 {% set thisPost = blogPost.post %}
+{% put head %}
+	<title>{{thisPost.title}}</title>
+	<meta name="description" content="{{thisPost.title}}">
+    <meta charset="UTF-8">
+    <meta name="msvalidate.01" content="36879475773792950F4872586A371571"/>
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimzied" content="width">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="navigation" content="tabbed">
+    <meta name="description"
+          content="{{ thisPost.title }}"/>
+    <meta property="fb:pages" content="240228462761886"/>
+    <meta property="og:title"
+          content="{{ thisPost.title }}"/>
+    <meta property="og:url" content="https://russian.rt.com/sport/news/920219-kontrol-rossiya-doping"/>
+    <meta property="og:description"
+          content="{{ thisPost.title }}"/>
+    <meta name="twitter:title"
+          content="В России предлагают ввести допинг-контроль на все отечественные киберспортивные турниры"/>
+    <meta name="spotim:recommended_page" content="false"/>
+    <meta name="published_time_telegram" content="2021-10-26T05:35:29+03:00"/>
+    <meta property="og:image" content="{{ thisPost.featured_images[0].path }}"/>
+    <meta property="og:image:type" content="image/jpeg"/>
+    <meta property="og:image:width" content="840"/>
+    <meta property="og:image:height" content="450"/>
+    <meta name="twitter:image" content="{{ thisPost.featured_images[0].path }}"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:app:name:iphone" content="iphone"/>
+    <meta name="twitter:app:id:iphone" content="iphone"/>
+    <meta name="twitter:app:url:iphone" content="url"/>
+    <meta name="twitter:app:name:ipad" content="ipad"/>
+    <meta name="twitter:app:id:ipad" content="ipad"/>
+    <meta name="twitter:app:url:ipad" content="url"/>
+    <meta name="twitter:app:name:googleplay" content="googleplay"/>
+    <meta name="twitter:app:id:googleplay" content="googleplay"/>
+    <meta name="twitter:app:url:googleplay" content="googleplay"/>
+    <meta name="apple-itunes-app" content="app-id=649316948, app-argument=russianrtnews://articles/920219"/>
+        <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = '{{ thisPost.featured_images[0].path }}';</script>
+    <meta name="mediator_theme" content="Спорт"/>
+    <meta name="mediator" content="920219"/>
+    <meta name="mediator_published_time" content="2021-10-26T05:35:29+03:00"/>
+    <meta name="mediator_author" content="Дмитрий"/>
+    {% endput %}
 <section class='news'>
 	<div class='container'>
 		<div class='news-container row'>
@@ -49,7 +95,7 @@ public function onEnd() {
 									        {% endfor %}
 												</div>
 								{% else %}
-								<img 
+								<img
 										src="{{'assets/images/backup_of_ubf_logo_curves_v13-2.png'|theme}}"
 										alt="UZBF">
 								{% endif %}

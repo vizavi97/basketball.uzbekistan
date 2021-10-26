@@ -400,3 +400,13 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
     });
 });
 
+Route::group(['prefix' => 'self'], function () {
+    Route::get('/{id}', function(Request $request) {
+        $param = $request->route()->parameters();
+
+        $coach = Coach::find($param['id']);
+        if($coach) {
+            return View::make('tim.basketball::cv', ['coach' => $coach]);
+        }
+    });
+});

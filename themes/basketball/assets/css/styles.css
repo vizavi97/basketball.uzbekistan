@@ -1052,6 +1052,11 @@ footer {
 	border-radius: 0;
 	color: #222;
 }
+
+.news-detail-preview .owl-carousel {
+    max-height: 540px!important;
+    overflow: hidden;
+}
 @media screen and (max-width: 960px) {
     .header-menu .header-menu-nav {
         display: none

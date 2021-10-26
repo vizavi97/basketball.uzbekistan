@@ -1,4 +1,8 @@
 fields:
+    btn:
+        span: full
+        path: $/tim/basketball/controllers/coaches/_btn.htm
+        type: partial
     name:
         label: Имя
         span: auto
@@ -33,81 +37,80 @@ fields:
         label: USER_ID
         span: auto
         type: number
-tabs:
-    fields:
-        living_address:
-            label: 'Место проживания'
-            span: auto
-            type: text
-            tab: Инфо
-        working_address:
-            label: 'Адрес работы'
-            span: auto
-            type: text
-            tab: Инфо
-        pc_quality:
-            label: 'Знание ПК'
-            options:
-                h: Высокий
-                m: Средний
-                l: Низкий
-                'n': 'Никогда не пользовался'
-            span: auto
-            type: radio
-            tab: Инфо
-        birth:
-            label: 'День рождения'
-            mode: datetime
-            span: auto
-            type: datepicker
-            tab: Инфо
-        diploma_file:
-            label: 'Диплом (Образование)'
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: auto
-            type: fileupload
-            tab: Документы
-        certificate_file:
-            label: 'Сертификат подтверждения Квалификации'
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: auto
-            type: fileupload
-            tab: Документы
-        categories_file:
-            label: 'Документ категории тренера'
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: auto
-            type: fileupload
-            tab: Документы
-        international_file:
-            label: 'Международний сертификат'
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: auto
-            type: fileupload
-            tab: Документы
-        other_files:
-            label: 'Другие документы'
-            mode: file
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            span: auto
-            type: fileupload
-            tab: Документы
+    living_address:
+        label: 'Место проживания'
+        span: auto
+        type: text
+        tab: Инфо
+    region:
+        label: 'Область к которой относится тренер'
+        nameFrom: title
+        descriptionFrom: description
+        span: auto
+        type: relation
+    working_address:
+        label: 'Адрес работы'
+        span: auto
+        type: text
+        tab: Инфо
+    pc_quality:
+        label: 'Знание ПК'
+        options:
+            h: Высокий
+            m: Средний
+            l: Низкий
+            'n': 'Никогда не пользовался'
+        span: auto
+        type: radio
+        tab: Инфо
+    birth:
+        label: 'День рождения'
+        mode: datetime
+        span: auto
+        type: datepicker
+        tab: Инфо
+    diploma_file:
+        label: 'Диплом (Образование)'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    categories_file:
+        label: 'Документ категории тренера'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    certificate_file:
+        label: 'Сертификат подтверждения Квалификации'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    other_files:
+        label: 'Другие документы'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    international_file:
+        label: 'Международний сертификат'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
