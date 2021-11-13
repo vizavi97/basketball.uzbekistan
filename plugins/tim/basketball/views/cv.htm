@@ -4,70 +4,157 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>CV - {{ coach.name }} {{ coach.surname }}</title>
     <style>
-        h4 {
-            color: #9c3328;
+        * {
+            box-sizing: border-box;
         }
 
-        h3 {
-            color: #333;
+        body {
+            background: #efefef;
+            max-width: 1200px;
+            margin: 2rem auto;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
+
+        .headline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0D0A0A;
+        }
+
+        .answer {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: rgba(25, 121, 193, 1);
+        }
+
+        .block {
+            margin-bottom: 1.5rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .preview-img {
+            margin: 1rem 0;
+            object-fit: contain;
+            max-height: 400px;
+        }
+        .docs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .docs > div {
+            margin: 1.5rem 0;
+            background: white;
+        }
+
     </style>
 </head>
 
 <body>
-{#<div class="black">#}
-{#    <h4>ФИО</h4>#}
-{#    <h4>{{ coach.name}} {{ coach.surname  }}</h4>#}
-{#</div>#}
-<a href="javascript:demoFromHTML()" class="button">Run Code</a>
-<div id="content" style="display: none">
-        <h4>ФИО</h4>
-        <h4>{{ coach.name}} {{ coach.surname  }}</h4>
+<div id="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="block">
+                <h4 class="headline">ФИО</h4>
+                <h4 class="answer">{{ coach.name }} {{ coach.surname }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Позиция (Статус Тренера)</h4>
+                <h4 class="answer">{{ coach.position ? coach.position : "---" }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Знание языков</h4>
+                <h4 class="answer">{{ coach.langs }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Дата рождения</h4>
+                <h4 class="answer">{{ coach.birth }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Регион</h4>
+                <h4 class="answer">{{ coach.region.title }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Место жительства</h4>
+                <h4 class="answer">{{ coach.living_address }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Адрес работы</h4>
+                <h4 class="answer">{{ coach.working_address }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Знание Пк</h4>
+                {% if coach.pc_quality == "h" %}
+                    <h4 class="answer">Высокий</h4>
+                {% elseif coach.pc_quality == "m" %}
+                    <h4 class="answer">Средний</h4>
+                {% else %}
+                    <h4 class="answer">Низкий</h4>
+                {% endif %}
+            </div>
+            {% if coach.teams_id|length > 0 %}
+                <div class="block">
+                    <h4 class="headline">Команды</h4>
+                    <h4 class="answer">{{ coach.teams_id }}</h4>
+                </div>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            <div class="block">
+                <h4 class="headline">Фотография тренера</h4>
+                <img class="preview-img" src="{{ coach.preview_img.path }}" alt="">
+            </div>
+            <div class="block">
+                <h4 class="headline">Номер телефона:</h4>
+                <h4 class="answer">{{ coach.user.phone }}</h4>
+            </div>
+            <div class="block">
+                <h4 class="headline">Email:</h4>
+                <h4 class="answer">{{ coach.user.email }}</h4>
+            </div>
+        </div>
+    </div>
+    <div class="docs row">
+        <div class="col-md-8">
+            <h4 class="headline">Диплом</h4>
+            <img  src="{{ coach.diploma_file.path }}" alt="">
+        </div>
+        <div class="col-md-8">
+            <h4 class="headline">Сертификат</h4>
+            <img  src="{{ coach.certificate_file.path }}" alt="">
+        </div>
+        <div class="col-md-8">
+            <h4 class="headline">Сертификат категории тренера</h4>
+            <img  src="{{ coach.categories_file.path }}" alt="">
+        </div>
+        <div class="col-md-8">
+            <h4 class="headline">Международный сертификат</h4>
+            <img  src="{{ coach.international_file.path }}" alt="">
+        </div>
+        {% if coach.other_files %}
+            <div class="col-md-8">
+                <h4 class="headline">Другие документы</h4>
+                <img  src="{{ coach.other_files.path }}" alt="">
+            </div>
+        {% endif %}
+    </div>
 </div>
-</body>
-<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-
 <script>
-    function demoFromHTML() {
-        var pdf = new jsPDF('p', 'pt', 'letter');
-        // source can be HTML-formatted string, or a reference
-        // to an actual DOM element from which the text will be scraped.
-        source = document.getElementById("content");
-        // we support special element handlers. Register them with jQuery-style
-        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-        // There is no support for any other type of selectors
-        // (class, of compound) at this time.
-        specialElementHandlers = {
-            // element with id of "bypass" - jQuery style selector
-            '#bypassme': function (element, renderer) {
-                // true = "handled elsewhere, bypass text extraction"
-                return true
-            }
-        };
-        margins = {
-            top: 80,
-            bottom: 60,
-            left: 40,
-            width: 522
-        };
-        // all coords and widths are in jsPDF instance's declared units
-        // 'inches' in this case
-        pdf.fromHTML(
-            source, // HTML string or DOM elem ref.
-            margins.left, // x coord
-            margins.top, { // y coord
-                'width': margins.width, // max width of content on PDF
-                'elementHandlers': specialElementHandlers
-            },
-
-            function (dispose) {
-                // dispose: object with X, Y of the last line add to the PDF
-                //          this allow the insertion of new lines after html
-                pdf.save('Test.pdf');
-            }, margins
-        );
+    window.onload = function () {
+        window.print()
     }
 </script>
+</body>
 </html>

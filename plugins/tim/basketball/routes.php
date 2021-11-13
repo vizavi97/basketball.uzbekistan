@@ -1,7 +1,9 @@
 <?php
 
 
+use Backend\Facades\BackendAuth;
 use Illuminate\Support\Facades\Route;
+use RainLab\User\Facades\Auth;
 use RainLab\User\Models\User as UserModel;
 use Tim\Basketball\Models\Coach;
 use Tim\Basketball\Models\Player;
@@ -281,6 +283,7 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
             $coach->working_address = $request->working_address;
             $coach->birth = $request->birth;
             $coach->preview_img = $request->preview_img;
+            $coach->passport = $request->passport;
             $coach->diploma_file = $request->diploma_file;
             $coach->certificate_file = $request->certificate_file;
             $coach->categories_file = $request->categories_file;
@@ -400,13 +403,27 @@ Route::group(['prefix' => 'api', 'middleware' => \Tim\Basketball\Helpers\Cors::c
     });
 });
 
-Route::group(['prefix' => 'self'], function () {
-    Route::get('/{id}', function(Request $request) {
-        $param = $request->route()->parameters();
+Route::group(['prefix' => 'self/cv'], function () {
+    Route::get('/{id}', function (Request $request) {
 
-        $coach = Coach::find($param['id']);
-        if($coach) {
+        if (BackendAuth::check()) {
+            $param = $request->route()->parameters();
+            $coach = Coach::with(
+                "preview_img",
+                "diploma_file",
+                "certificate_file",
+                "categories_file",
+                "international_file",
+                "other_files",
+                "passport",
+                "region",
+                "user"
+            )->find($param['id']);
             return View::make('tim.basketball::cv', ['coach' => $coach]);
         }
-    });
+        else {
+            return redirect('/');
+        }
+
+    })->middleware('web');
 });

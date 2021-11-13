@@ -1,6 +1,7 @@
 <?php namespace Tim\Basketball\Models;
 
 use Model;
+use RainLab\User\Models\User;
 use Tim\Staticplugin\Models\Region;
 
 /**
@@ -24,6 +25,7 @@ class Coach extends Model
     
     public $attachOne = [
         'preview_img' => 'System\Models\File',
+        'passport' => 'System\Models\File',
         'diploma_file' => 'System\Models\File',
         'certificate_file' => 'System\Models\File',
         'categories_file' => 'System\Models\File',
@@ -41,4 +43,12 @@ class Coach extends Model
         	'order' => 'name'
         	],
     ];
+
+  	public function region(){
+        return $this->hasOne(Region::class, 'id', 'region_id');
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }
